@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "json-server": "^0.17.3"
+  },
+  "scripts": {
+    "serve": "json-server --watch db.json"
   }
 }
