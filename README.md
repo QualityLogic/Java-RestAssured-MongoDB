@@ -1,10 +1,24 @@
 # Java-Rest-Assured
 A demonstration of API testing using the Java API automation framework [Rest Assured](https://rest-assured.io/). This testing framework allows for much flexibility, allowing one to introduce abstraction and complexity as needed.
+
 ## Server
 To not depend on a third-party resource to serve the API endpoints, this repository utilizes [Json-Server](https://github.com/typicode/json-server). The endpoints resemble the ones found in [Swapi](https://swapi.dev/), a Stars Wars based API test service.
 
-To run the server, one must operate within the `server` directory. For first time use, please run `npm install -g json-server
-`, which will install Json-Server for global use. After you have finished the installation procedure, use the command `json-server --watch db.json` to initialize the server on your localhost.
+To run the server, follow these instructions:
+
+1. Ensure you have the correct version of Node installed (check the `.node-version` file). You can use `nvm`, `asdf`, or whatever Node version management tool you like.
+2. Change to the `server` directory:
+```
+cd server
+```
+3. Install the dependencies:
+```
+npm install
+```
+4. Run the server:
+```
+npm run serve
+```
 
 ## Testing
 The Java portion of this repository uses **Maven** as its dependency manager. The required packages: **Rest Assured** and **JUnit** can be managed through the `pom.xml` file or any given Maven management system, such as the one in Intellij Idea.
@@ -14,10 +28,10 @@ The Java portion of this repository uses **Maven** as its dependency manager. Th
 For example:
 ```
 given()
-        .baseUri("http://localhost")
-        .port(3000)
+    .baseUri("http://localhost")
+    .port(3000)
 .when()
-        .get("/planets/1");
+    .get("/planets/1");
 .then()
     .body("planet.name", equalTo("Tatooine")
 // ... 
@@ -41,10 +55,10 @@ public class Planet {
 If we take the above _Given_, _When_, and _Then_ statements and combine it with a class instance, we get the following:
 ```
 var response = given()
-            .baseUri("http://localhost")
-            .port(3000)
+    .baseUri("http://localhost")
+    .port(3000)
     .when()
-            .get("/planets/1");
+        .get("/planets/1");
 
     var tatooine = response.as(Planet.class);
 
