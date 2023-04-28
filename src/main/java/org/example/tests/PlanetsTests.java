@@ -1,12 +1,13 @@
 package org.example.tests;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.example.models.Person;
 import org.example.models.Planet;
 import org.json.JSONObject;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Date;
 import java.time.Instant;
 import java.util.ArrayList;
 
@@ -15,15 +16,19 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class PlanetsTests {
-    final String host = "http://localhost";
-    final int port = 3000;
+    final static String host = "http://localhost";
+    final static int port = 3000;
+
+    @BeforeAll
+    static void setup() {
+        RestAssured.baseURI = host;
+        RestAssured.port = port;
+    }
 
     @Test
     void VerifyTatooine() {
         var response = given()
-                .baseUri(host)
-                .port(port)
-        .when()
+                .when()
                 .get("/planets/1");
 
         assertThat(response, notNullValue());
@@ -45,17 +50,13 @@ public class PlanetsTests {
     @Test
     void VerifyLukeSkywalker() {
         var planetResponse = given()
-                .baseUri(host)
-                .port(port)
-        .when()
+                .when()
                 .get("/planets/1");
         assertThat(planetResponse, notNullValue());
         var tatooine = planetResponse.as(Planet.class);
 
         var personResponse = given()
-                .baseUri(host)
-                .port(port)
-        .when()
+                .when()
                 .get("/people/1");
 
         assertThat(personResponse, notNullValue());
@@ -79,16 +80,65 @@ public class PlanetsTests {
     }
 
     @Test
-    void CreatePerson() {
-        var peopleResponse = given()
-                .baseUri(host)
-                .port(port)
-        .when()
-                .get("/people");
+    void CreatePlanet() {
+        var newId = getNumberOfPlanets() + 1;
 
-        var ids = peopleResponse.getBody().jsonPath().getList("id");
-        var lastId = ids.get(ids.size() - 1).toString();
-        var newId = Integer.parseInt(lastId) + 1;
+        var body = new JSONObject()
+                .put("id", newId)
+                .put("name", "Planet_Tester_" + newId)
+                .put("rotation_period", "10")
+                .put("orbital_period", "83")
+                .put("diameter", "10000")
+                .put("climate", "arid")
+                .put("gravity", "1 standard")
+                .put("terrain", "desert")
+                .put("surface_water", "1")
+                .put("population", "300000")
+                .put("residents", new ArrayList<String>())
+                .put("films", new ArrayList<String>())
+                .put("created", Instant.now().toString())
+                .put("edited", Instant.now().toString())
+                .put("url", host + "/:" + port + "planets/" + newId);
+
+        var postNewPlanetResponse = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .when()
+                .post("/planets/");
+
+        assertThat(postNewPlanetResponse.statusCode(), equalTo(201));
+
+        var getNewPlanetResponse = given()
+                .when()
+                .get("/planets/" + newId);
+
+        assertThat(getNewPlanetResponse, notNullValue());
+        var newPlanet = getNewPlanetResponse.as(Planet.class);
+
+        var bodyMap = body.toMap();
+        assertThat(newPlanet.name, equalTo(bodyMap.get("name")));
+        assertThat(newPlanet.rotation_period, equalTo(bodyMap.get("rotation_period")));
+        assertThat(newPlanet.orbital_period, equalTo(bodyMap.get("orbital_period")));
+        assertThat(newPlanet.diameter, equalTo(bodyMap.get("diameter")));
+        assertThat(newPlanet.climate, equalTo(bodyMap.get("climate")));
+        assertThat(newPlanet.gravity, equalTo(bodyMap.get("gravity")));
+        assertThat(newPlanet.terrain, equalTo(bodyMap.get("terrain")));
+        assertThat(newPlanet.surface_water, equalTo(bodyMap.get("surface_water")));
+        assertThat(newPlanet.population, equalTo(bodyMap.get("population")));
+        assertThat(newPlanet.residents.isEmpty(), equalTo(true));
+        assertThat(newPlanet.films.isEmpty(), equalTo(true));
+
+        var deleteResponse = given()
+                .when()
+                .delete("/planets/" + newId);
+
+        assertThat(deleteResponse.statusCode(), equalTo(200));
+    }
+
+    @Test
+    void CreatePerson() {
+        var newId = getNumberOfPeople() + 1;
+
         var body = new JSONObject()
                 .put("id", newId)
                 .put("name", "Bryce_Tester_" + newId)
@@ -109,18 +159,14 @@ public class PlanetsTests {
                 .put("url", host + "/:" + port + "people/" + newId);
 
         var newPersonResponse = given()
-                .baseUri(host)
-                .port(port)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
-        .when()
+                .when()
                 .post("/people/");
 
         assertThat(newPersonResponse.statusCode(), equalTo(201));
 
         var personResponse = given()
-                .baseUri(host)
-                .port(port)
                 .when()
                 .get("/people/" + newId);
 
@@ -140,5 +186,29 @@ public class PlanetsTests {
         assertThat(tester.species.isEmpty(), equalTo(true));
         assertThat(tester.vehicles.isEmpty(), equalTo(true));
         assertThat(tester.starships.isEmpty(), equalTo(true));
+
+        var deleteResponse = given()
+                .when()
+                .delete("/people/" + newId);
+
+        assertThat(deleteResponse.statusCode(), equalTo(200));
+    }
+
+    private Integer getNumberOfPlanets() {
+        var planetResponse = given()
+                .when()
+                .get("/planets");
+
+        var ids = planetResponse.getBody().jsonPath().getList("id");
+        return Integer.parseInt(ids.get(ids.size() - 1).toString());
+    }
+
+    private Integer getNumberOfPeople() {
+        var peopleResponse = given()
+                .when()
+                .get("/people");
+
+        var ids = peopleResponse.getBody().jsonPath().getList("id");
+        return Integer.parseInt(ids.get(ids.size() - 1).toString());
     }
 }
