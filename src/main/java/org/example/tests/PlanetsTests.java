@@ -5,7 +5,7 @@ import io.restassured.http.ContentType;
 import org.example.models.Person;
 import org.example.models.Planet;
 import org.json.JSONObject;
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -32,8 +32,8 @@ public class PlanetsTests {
         RestAssured.port = port;
     }
 
-    @AfterAll
-    static void teardown() {
+    @AfterEach
+    void teardown() {
         if (!createdPeople.isEmpty())
             deletePeople();
 
@@ -50,7 +50,7 @@ public class PlanetsTests {
             assertThat(response.statusCode(), equalTo(200));
         }
 
-        createdPeople = new ArrayList<>();
+        createdPlanets = new ArrayList<>();
     }
 
     private static void deletePeople() {
@@ -62,7 +62,7 @@ public class PlanetsTests {
             assertThat(response.statusCode(), equalTo(200));
         }
 
-        createdPlanets = new ArrayList<>();
+        createdPeople = new ArrayList<>();
     }
 
     private Integer getNumberOfPlanets() {
