@@ -5,11 +5,13 @@ import io.restassured.http.ContentType;
 import org.example.models.Person;
 import org.example.models.Planet;
 import org.json.JSONObject;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
@@ -19,10 +21,32 @@ public class PlanetsTests {
     final static String host = "http://localhost";
     final static int port = 3000;
 
+    private final static List<Planet> createdPlanets = new ArrayList<>();
+    private final static List<Person> createdPeople = new ArrayList<>();
+
     @BeforeAll
     static void setup() {
         RestAssured.baseURI = host;
         RestAssured.port = port;
+    }
+
+    @AfterAll
+    static void teardown() {
+        for (var planet : createdPlanets) {
+            var response = given()
+                    .when()
+                    .delete("planets/" + planet.id);
+
+            assertThat(response.statusCode(), equalTo(200));
+        }
+
+        for (var person : createdPeople) {
+            var response = given()
+                    .when()
+                    .delete("people/" + person.id);
+
+            assertThat(response.statusCode(), equalTo(200));
+        }
     }
 
     @Test
@@ -114,6 +138,7 @@ public class PlanetsTests {
 
         assertThat(getNewPlanetResponse, notNullValue());
         var newPlanet = getNewPlanetResponse.as(Planet.class);
+        createdPlanets.add(newPlanet);
 
         var bodyMap = body.toMap();
         assertThat(newPlanet.name, equalTo(bodyMap.get("name")));
@@ -127,12 +152,6 @@ public class PlanetsTests {
         assertThat(newPlanet.population, equalTo(bodyMap.get("population")));
         assertThat(newPlanet.residents.isEmpty(), equalTo(true));
         assertThat(newPlanet.films.isEmpty(), equalTo(true));
-
-        var deleteResponse = given()
-                .when()
-                .delete("/planets/" + newId);
-
-        assertThat(deleteResponse.statusCode(), equalTo(200));
     }
 
     @Test
@@ -172,6 +191,7 @@ public class PlanetsTests {
 
         assertThat(personResponse, notNullValue());
         var tester = personResponse.as(Person.class);
+        createdPeople.add(tester);
 
         var bodyMap = body.toMap();
         assertThat(tester.name, equalTo(bodyMap.get("name")));
@@ -186,12 +206,6 @@ public class PlanetsTests {
         assertThat(tester.species.isEmpty(), equalTo(true));
         assertThat(tester.vehicles.isEmpty(), equalTo(true));
         assertThat(tester.starships.isEmpty(), equalTo(true));
-
-        var deleteResponse = given()
-                .when()
-                .delete("/people/" + newId);
-
-        assertThat(deleteResponse.statusCode(), equalTo(200));
     }
 
     private Integer getNumberOfPlanets() {
