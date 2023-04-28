@@ -15,12 +15,14 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class PlanetsTests {
+    final String host = "http://localhost";
+    final int port = 3000;
 
     @Test
     void VerifyTatooine() {
         var response = given()
-                .baseUri("http://localhost")
-                .port(3000)
+                .baseUri(host)
+                .port(port)
         .when()
                 .get("/planets/1");
 
@@ -43,16 +45,16 @@ public class PlanetsTests {
     @Test
     void VerifyLukeSkywalker() {
         var planetResponse = given()
-                .baseUri("http://localhost")
-                .port(3000)
+                .baseUri(host)
+                .port(port)
         .when()
                 .get("/planets/1");
         assertThat(planetResponse, notNullValue());
         var tatooine = planetResponse.as(Planet.class);
 
         var personResponse = given()
-                .baseUri("http://localhost")
-                .port(3000)
+                .baseUri(host)
+                .port(port)
         .when()
                 .get("/people/1");
 
@@ -79,8 +81,8 @@ public class PlanetsTests {
     @Test
     void CreatePerson() {
         var peopleResponse = given()
-                .baseUri("http://localhost")
-                .port(3000)
+                .baseUri(host)
+                .port(port)
         .when()
                 .get("/people");
 
@@ -104,11 +106,11 @@ public class PlanetsTests {
                 .put("starships", new ArrayList<String>())
                 .put("created", Instant.now().toString())
                 .put("edited", Instant.now().toString())
-                .put("url", "http://localhost:3000/people/" + newId);
+                .put("url", host + "/:" + port + "people/" + newId);
 
         var newPersonResponse = given()
-                .baseUri("http://localhost")
-                .port(3000)
+                .baseUri(host)
+                .port(port)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
         .when()
@@ -117,8 +119,8 @@ public class PlanetsTests {
         assertThat(newPersonResponse.statusCode(), equalTo(201));
 
         var personResponse = given()
-                .baseUri("http://localhost")
-                .port(3000)
+                .baseUri(host)
+                .port(port)
                 .when()
                 .get("/people/" + newId);
 
