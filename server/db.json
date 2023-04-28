@@ -766,25 +766,6 @@
       "created": "2014-12-15T12:48:05.971000Z",
       "edited": "2014-12-20T21:17:50.347000Z",
       "url": "https://swapi.dev/api/people/21/"
-    },
-    {
-      "films": [],
-      "homeworld": "",
-      "gender": "male",
-      "skin_color": "fair",
-      "edited": "2023-04-27T21:01:04.808662Z",
-      "created": "2023-04-27T21:01:04.806997Z",
-      "mass": "83",
-      "vehicles": [],
-      "url": "http://localhost:3000/people/21",
-      "hair_color": "brown",
-      "birth_year": "19BBY",
-      "eye_color": "hazel",
-      "species": [],
-      "starships": [],
-      "name": "Bryce_Tester_21",
-      "id": 21,
-      "height": "175"
     }
   ],
   "films": [
