@@ -35,13 +35,13 @@ public class PlanetsTests {
     @AfterEach
     void teardown() {
         if (!createdPeople.isEmpty())
-            deletePeople();
+            deleteNewPeople();
 
         if (!createdPlanets.isEmpty())
-            deletePlanets();
+            deleteNewPlanets();
     }
 
-    private static void deletePlanets() {
+    private static void deleteNewPlanets() {
         for (var planet : createdPlanets) {
             var response = given()
                     .when()
@@ -53,7 +53,7 @@ public class PlanetsTests {
         createdPlanets = new ArrayList<>();
     }
 
-    private static void deletePeople() {
+    private static void deleteNewPeople() {
         for (var person : createdPeople) {
             var response = given()
                     .when()
