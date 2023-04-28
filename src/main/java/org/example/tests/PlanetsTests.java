@@ -21,8 +21,10 @@ public class PlanetsTests {
     final static String host = "http://localhost";
     final static int port = 3000;
 
-    private final static List<Planet> createdPlanets = new ArrayList<>();
-    private final static List<Person> createdPeople = new ArrayList<>();
+    private static List<Planet> createdPlanets = new ArrayList<>();
+    private static List<Person> createdPeople = new ArrayList<>();
+
+    // Hooks and Utilities
 
     @BeforeAll
     static void setup() {
@@ -32,6 +34,14 @@ public class PlanetsTests {
 
     @AfterAll
     static void teardown() {
+        if (!createdPeople.isEmpty())
+            deletePeople();
+
+        if (!createdPlanets.isEmpty())
+            deletePlanets();
+    }
+
+    private static void deletePlanets() {
         for (var planet : createdPlanets) {
             var response = given()
                     .when()
@@ -40,6 +50,10 @@ public class PlanetsTests {
             assertThat(response.statusCode(), equalTo(200));
         }
 
+        createdPeople = new ArrayList<>();
+    }
+
+    private static void deletePeople() {
         for (var person : createdPeople) {
             var response = given()
                     .when()
@@ -47,7 +61,29 @@ public class PlanetsTests {
 
             assertThat(response.statusCode(), equalTo(200));
         }
+
+        createdPlanets = new ArrayList<>();
     }
+
+    private Integer getNumberOfPlanets() {
+        var planetResponse = given()
+                .when()
+                .get("/planets");
+
+        var ids = planetResponse.getBody().jsonPath().getList("id");
+        return Integer.parseInt(ids.get(ids.size() - 1).toString());
+    }
+
+    private Integer getNumberOfPeople() {
+        var peopleResponse = given()
+                .when()
+                .get("/people");
+
+        var ids = peopleResponse.getBody().jsonPath().getList("id");
+        return Integer.parseInt(ids.get(ids.size() - 1).toString());
+    }
+
+    // Tests
 
     @Test
     void VerifyTatooine() {
@@ -206,23 +242,5 @@ public class PlanetsTests {
         assertThat(tester.species.isEmpty(), equalTo(true));
         assertThat(tester.vehicles.isEmpty(), equalTo(true));
         assertThat(tester.starships.isEmpty(), equalTo(true));
-    }
-
-    private Integer getNumberOfPlanets() {
-        var planetResponse = given()
-                .when()
-                .get("/planets");
-
-        var ids = planetResponse.getBody().jsonPath().getList("id");
-        return Integer.parseInt(ids.get(ids.size() - 1).toString());
-    }
-
-    private Integer getNumberOfPeople() {
-        var peopleResponse = given()
-                .when()
-                .get("/people");
-
-        var ids = peopleResponse.getBody().jsonPath().getList("id");
-        return Integer.parseInt(ids.get(ids.size() - 1).toString());
     }
 }
