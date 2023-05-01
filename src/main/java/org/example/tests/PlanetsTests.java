@@ -243,4 +243,47 @@ public class PlanetsTests {
         assertThat(tester.vehicles.isEmpty(), equalTo(true));
         assertThat(tester.starships.isEmpty(), equalTo(true));
     }
+
+    @Test
+    void EditPerson() {
+        CreatePerson();
+
+        var person = createdPeople.get(0);
+        var body = new JSONObject()
+                .put("id", person.id)
+                .put("name", "Bryce_Tester_Patch" + person.id)
+                .put("height", "175")
+                .put("mass", "83")
+                .put("hair_color", "brown")
+                .put("skin_color", "fair")
+                .put("eye_color", "hazel")
+                .put("birth_year", "19BBY")
+                .put("gender", "male")
+                .put("homeworld", "")
+                .put("films", new ArrayList<String>())
+                .put("species", new ArrayList<String>())
+                .put("vehicles", new ArrayList<String>())
+                .put("starships", new ArrayList<String>())
+                .put("created", Instant.now().toString())
+                .put("edited", Instant.now().toString())
+                .put("url", host + "/:" + port + "people/" + person.id);
+
+        var request = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .when()
+                .patch("/people/" + person.id);
+
+        assertThat(request.statusCode(), equalTo(200));
+
+        var patchedPerson = request.as(Person.class);
+        assertThat(patchedPerson.name, containsString("Patch"));
+
+        var getRequest = given()
+                .when()
+                .get("/people/" + patchedPerson.id);
+
+        var getPerson = getRequest.as(Person.class);
+        assertThat(getPerson.name, containsString("Patch"));
+    }
 }

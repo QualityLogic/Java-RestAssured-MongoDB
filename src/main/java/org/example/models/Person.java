@@ -26,4 +26,6 @@ public class Person {
     public String created;
     public String edited;
     public String url;
+    public String empty;
+    public String mapType;
 }
