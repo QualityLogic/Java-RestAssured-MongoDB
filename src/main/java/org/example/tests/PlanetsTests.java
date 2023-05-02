@@ -140,7 +140,7 @@ public class PlanetsTests {
     }
 
     @Test
-    void CreatePlanet() {
+    void VerifyPlanetCreation() {
         var newId = getNumberOfPlanets() + 1;
 
         var body = new JSONObject()
@@ -191,7 +191,7 @@ public class PlanetsTests {
     }
 
     @Test
-    void CreatePerson() {
+    void VerifyPersonCreation() {
         var newId = getNumberOfPeople() + 1;
 
         var body = new JSONObject()
@@ -245,8 +245,8 @@ public class PlanetsTests {
     }
 
     @Test
-    void EditPerson() {
-        CreatePerson();
+    void VerifyPatchedPerson() {
+        VerifyPersonCreation();
 
         var person = createdPeople.get(0);
         var body = new JSONObject()
@@ -285,5 +285,64 @@ public class PlanetsTests {
 
         var getPerson = getRequest.as(Person.class);
         assertThat(getPerson.name, containsString("Patch"));
+    }
+
+    @Test
+    void VerifyPatchedPlanet() {
+        VerifyPlanetCreation();
+
+        var planet = createdPlanets.get(0);
+        var body = new JSONObject()
+                .put("id", planet.id)
+                .put("name", "Planet_Tester_Patch" + planet.id)
+                .put("rotation_period", "10")
+                .put("orbital_period", "83")
+                .put("diameter", "10000")
+                .put("climate", "arid")
+                .put("gravity", "1 standard")
+                .put("terrain", "desert")
+                .put("surface_water", "1")
+                .put("population", "300000")
+                .put("residents", new ArrayList<String>())
+                .put("films", new ArrayList<String>())
+                .put("created", Instant.now().toString())
+                .put("edited", Instant.now().toString())
+                .put("url", host + "/:" + port + "planets/" + planet.id);
+
+        var request = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .when()
+                .patch("/planets/" + planet.id);
+
+        assertThat(request.statusCode(), equalTo(200));
+
+        var patchedPlanet = request.as(Planet.class);
+        assertThat(patchedPlanet.name, containsString("Patch"));
+
+        var getRequest = given()
+                .when()
+                .get("/planets/" + patchedPlanet.id);
+
+        var getPlanet = getRequest.as(Planet.class);
+        assertThat(getPlanet.name, containsString("Patch"));
+    }
+
+    @Test
+    void VerifyPlanetNotFound() {
+        var response = given()
+                .when()
+                .get("/planets/-1");
+
+        assertThat(response.statusCode(), equalTo(404));
+    }
+
+    @Test
+    void VerifyersonNotFound() {
+        var response = given()
+                .when()
+                .get("/people/-1");
+
+        assertThat(response.statusCode(), equalTo(404));
     }
 }

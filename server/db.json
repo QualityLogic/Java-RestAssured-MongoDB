@@ -510,7 +510,7 @@
     },
     {
       "id": 11,
-      "name": "Anakin Skywalker",
+      "name": "Planet_Tester_Patch11",
       "height": "188",
       "mass": "84",
       "hair_color": "blond",
@@ -519,11 +519,7 @@
       "birth_year": "41.9BBY",
       "gender": "male",
       "homeworld": "https://swapi.dev/api/planets/1/",
-      "films": [
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
-      ],
+      "films": [],
       "species": [],
       "vehicles": [
         "https://swapi.dev/api/vehicles/44/",
@@ -534,9 +530,18 @@
         "https://swapi.dev/api/starships/59/",
         "https://swapi.dev/api/starships/65/"
       ],
-      "created": "2014-12-10T16:20:44.310000Z",
-      "edited": "2014-12-20T21:17:50.327000Z",
-      "url": "https://swapi.dev/api/people/11/"
+      "created": "2023-05-02T19:08:00.194783Z",
+      "edited": "2023-05-02T19:08:00.194819Z",
+      "url": "http://localhost/:3000planets/11",
+      "climate": "arid",
+      "rotation_period": "10",
+      "population": "300000",
+      "orbital_period": "83",
+      "surface_water": "1",
+      "diameter": "10000",
+      "gravity": "1 standard",
+      "residents": [],
+      "terrain": "desert"
     },
     {
       "id": 12,
