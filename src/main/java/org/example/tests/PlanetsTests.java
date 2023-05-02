@@ -338,7 +338,7 @@ public class PlanetsTests {
     }
 
     @Test
-    void VerifyersonNotFound() {
+    void VerifyPersonNotFound() {
         var response = given()
                 .when()
                 .get("/people/-1");
