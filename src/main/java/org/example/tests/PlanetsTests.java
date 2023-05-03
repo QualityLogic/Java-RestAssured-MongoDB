@@ -2,6 +2,7 @@ package org.example.tests;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.example.models.Film;
 import org.example.models.Person;
 import org.example.models.Planet;
 import org.json.JSONObject;
@@ -245,6 +246,28 @@ public class PlanetsTests {
     }
 
     @Test
+    void VerifyANewHope() {
+        var response = given()
+                .when()
+                .get("/films/1");
+
+        var aNewHope = response.as(Film.class);
+
+        var openingCrawl = "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy....";
+
+        assertThat(aNewHope.title, equalTo("A New Hope"));
+        assertThat(aNewHope.episode_id, equalTo("4"));
+        assertThat(aNewHope.opening_crawl, equalTo(openingCrawl));
+        assertThat(aNewHope.director, equalTo("George Lucas"));
+        assertThat(aNewHope.producer, equalTo("Gary Kurtz, Rick McCallum"));
+        assertThat(aNewHope.characters.isEmpty(), equalTo(false));
+        assertThat(aNewHope.planets.isEmpty(), equalTo(false));
+        assertThat(aNewHope.starships.isEmpty(), equalTo(false));
+        assertThat(aNewHope.vehicles.isEmpty(), equalTo(false));
+        assertThat(aNewHope.species.isEmpty(), equalTo(false));
+    }
+
+    @Test
     void VerifyPatchedPerson() {
         VerifyPersonCreation();
 
@@ -342,6 +365,15 @@ public class PlanetsTests {
         var response = given()
                 .when()
                 .get("/people/-1");
+
+        assertThat(response.statusCode(), equalTo(404));
+    }
+
+    @Test
+    void VerifyFilmNotFound() {
+        var response = given()
+                .when()
+                .get("/films/-1");
 
         assertThat(response.statusCode(), equalTo(404));
     }
