@@ -24,6 +24,7 @@ public class PlanetsTests {
 
     private static List<Planet> createdPlanets = new ArrayList<>();
     private static List<Person> createdPeople = new ArrayList<>();
+    private static List<Film> createdFilms = new ArrayList<>();
 
     // Hooks and Utilities
 
@@ -35,11 +36,15 @@ public class PlanetsTests {
 
     @AfterEach
     void teardown() {
+        // TODO: Remove DELETE calls directly to the API
         if (!createdPeople.isEmpty())
             deleteNewPeople();
 
         if (!createdPlanets.isEmpty())
             deleteNewPlanets();
+
+        if (!createdFilms.isEmpty())
+            deleteNewFilms();
     }
 
     private static void deleteNewPlanets() {
@@ -64,6 +69,18 @@ public class PlanetsTests {
         }
 
         createdPeople = new ArrayList<>();
+    }
+
+    private static void deleteNewFilms() {
+        for (var film : createdFilms) {
+            var response = given()
+                    .when()
+                    .delete("films/" + film.id);
+
+            assertThat(response.statusCode(), equalTo(200));
+        }
+
+        createdFilms = new ArrayList<>();
     }
 
     private Integer getNumberOfPlanets() {
@@ -168,7 +185,7 @@ public class PlanetsTests {
                 .put("films", new ArrayList<String>())
                 .put("created", Instant.now().toString())
                 .put("edited", Instant.now().toString())
-                .put("url", host + "/:" + port + "planets/" + newId);
+                .put("url", host + ":" + port + "planets/" + newId);
 
         var postNewPlanetResponse = given()
                 .contentType(ContentType.JSON)
@@ -221,7 +238,7 @@ public class PlanetsTests {
                 .put("starships", new ArrayList<String>())
                 .put("created", Instant.now().toString())
                 .put("edited", Instant.now().toString())
-                .put("url", host + "/:" + port + "people/" + newId);
+                .put("url", host + ":" + port + "people/" + newId);
 
         var newPersonResponse = given()
                 .contentType(ContentType.JSON)
@@ -257,6 +274,51 @@ public class PlanetsTests {
     @Test
     void VerifyFilmCreation() {
         var newId = getNumberOfFilms() + 1;
+
+        var body = new JSONObject()
+                .put("id", newId)
+                .put("title", "Tester_Film_" + newId)
+                .put("episode_id", newId)
+                .put("opening_crawl", "In a galaxy far away or perhaps not...")
+                .put("director", "Quality Logic")
+                .put("producer", "BC")
+                .put("release_date", Instant.now())
+                .put("characters", new ArrayList<>())
+                .put("planets", new ArrayList<>())
+                .put("starships", new ArrayList<>())
+                .put("vehicles", new ArrayList<>())
+                .put("species", new ArrayList<>())
+                .put("created", Instant.now())
+                .put("edited", Instant.now())
+                .put("url", host + ":" + port + "/films/" + newId);
+
+        var newFilmResponse = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .post("/films");
+
+        assertThat(newFilmResponse.statusCode(), equalTo(201));
+
+        var filmResponse = given()
+                .when()
+                .get("/films/" + newId);
+
+        assertThat(filmResponse, notNullValue());
+        var film = filmResponse.as(Film.class);
+        createdFilms.add(film);
+
+        var bodyMap = body.toMap();
+        assertThat(film.title, equalTo(bodyMap.get("title")));
+        assertThat(film.episode_id, equalTo(bodyMap.get("episode_id").toString()));
+        assertThat(film.opening_crawl, equalTo(bodyMap.get("opening_crawl")));
+        assertThat(film.director, equalTo(bodyMap.get("director")));
+        assertThat(film.producer, equalTo(bodyMap.get("producer")));
+        assertThat(film.release_date, equalTo(bodyMap.get("release_date").toString()));
+        assertThat(film.characters.isEmpty(), equalTo(true));
+        assertThat(film.planets.isEmpty(), equalTo(true));
+        assertThat(film.vehicles.isEmpty(), equalTo(true));
+        assertThat(film.starships.isEmpty(), equalTo(true));
+        assertThat(film.species.isEmpty(), equalTo(true));
     }
 
     @Test
