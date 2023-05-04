@@ -185,7 +185,7 @@ public class PlanetsTests {
                 .put("films", new ArrayList<String>())
                 .put("created", Instant.now().toString())
                 .put("edited", Instant.now().toString())
-                .put("url", host + ":" + port + "planets/" + newId);
+                .put("url", host + ":" + port + "/planets/" + newId);
 
         var postNewPlanetResponse = given()
                 .contentType(ContentType.JSON)
@@ -238,7 +238,7 @@ public class PlanetsTests {
                 .put("starships", new ArrayList<String>())
                 .put("created", Instant.now().toString())
                 .put("edited", Instant.now().toString())
-                .put("url", host + ":" + port + "people/" + newId);
+                .put("url", host + ":" + port + "/people/" + newId);
 
         var newPersonResponse = given()
                 .contentType(ContentType.JSON)
