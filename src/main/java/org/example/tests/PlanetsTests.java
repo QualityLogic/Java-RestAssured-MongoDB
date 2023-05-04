@@ -84,6 +84,15 @@ public class PlanetsTests {
         return Integer.parseInt(ids.get(ids.size() - 1).toString());
     }
 
+    private Integer getNumberOfFilms() {
+        var filmResponse = given()
+                .when()
+                .get("/films");
+
+        var ids = filmResponse.getBody().jsonPath().getList("id");
+        return Integer.parseInt(ids.get(ids.size() - 1).toString());
+    }
+
     // Tests
 
     @Test
@@ -243,6 +252,11 @@ public class PlanetsTests {
         assertThat(tester.species.isEmpty(), equalTo(true));
         assertThat(tester.vehicles.isEmpty(), equalTo(true));
         assertThat(tester.starships.isEmpty(), equalTo(true));
+    }
+
+    @Test
+    void VerifyFilmCreation() {
+        var newId = getNumberOfFilms() + 1;
     }
 
     @Test
