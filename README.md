@@ -21,7 +21,28 @@ npm run serve
 ```
 
 ## Testing
-The Java portion of this repository uses **Maven** as its dependency manager. The required packages: **Rest Assured** and **JUnit** can be managed through the `pom.xml` file or any given Maven management system, such as the one in Intellij Idea.
+The Java portion of this repository uses [**Maven**](https://maven.apache.org/) as its dependency manager.
+
+The required packages: **Rest Assured** and **JUnit** can be managed through the `pom.xml` file or any given Maven management system, such as the one in IntelliJ IDEA.
+
+To run from the command line:
+
+1. Install Maven (e.g. with Homebrew):
+```
+brew install maven
+```
+
+2. Use Maven to build the project and run the test suite (note: the server must be running in another process for these tests to work!):
+```
+mvn clean test
+```
+
+3. Use Maven to run a specific test class (`-Dtest=<specific test class>`):
+```
+mvn clean test -Dtest=PlanetsTests#VerifyPlanetCreation
+```
+
+## Rest Assured
 
 **Rest Assured** uses the standard Gherkin language methods, i.e., the _Given_, _When_, and _Then_ statements.
 
