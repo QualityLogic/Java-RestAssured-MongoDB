@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import org.example.models.Film;
 import org.example.models.Person;
 import org.example.models.Planet;
+import org.example.models.Species;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -111,6 +112,27 @@ public class PlanetsTests {
     }
 
     // Tests
+
+    @Test
+    void VerifyHuman() {
+        var response = given()
+                .when()
+                .get("/species/1");
+
+        assertThat(response, notNullValue());
+
+        var human = response.as(Species.class);
+
+        assertThat(human.name, equalTo("Human"));
+        assertThat(human.classification, equalTo("mammal"));
+        assertThat(human.designation, equalTo("sentient"));
+        assertThat(human.average_height, equalTo("180"));
+        assertThat(human.skin_colors, equalTo("caucasian, black, asian, hispanic"));
+        assertThat(human.hair_colors, equalTo("blonde, brown, black, red"));
+        assertThat(human.eye_colors, equalTo("brown, blue, green, hazel, grey, amber"));
+        assertThat(human.average_lifespan, equalTo("120"));
+        assertThat(human.language, equalTo("Galactic Basic"));
+    }
 
     @Test
     void VerifyTatooine() {
