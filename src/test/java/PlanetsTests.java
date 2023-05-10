@@ -27,6 +27,8 @@ public class PlanetsTests {
     private static List<Person> createdPeople = new ArrayList<>();
     private static List<Film> createdFilms = new ArrayList<>();
 
+    private static List<Species> createdSpecies = new ArrayList<>();
+
     // Hooks and Utilities
 
     @BeforeAll
@@ -46,6 +48,9 @@ public class PlanetsTests {
 
         if (!createdFilms.isEmpty())
             deleteNewFilms();
+
+        if (!createdSpecies.isEmpty())
+            deleteNewSpecies();
     }
 
     private static void deleteNewPlanets() {
@@ -84,6 +89,18 @@ public class PlanetsTests {
         createdFilms = new ArrayList<>();
     }
 
+    private static void deleteNewSpecies() {
+        for (var species : createdSpecies) {
+            var response = given()
+                    .when()
+                    .delete("species/" + species.id);
+
+            assertThat(response.statusCode(), equalTo(200));
+        }
+
+        createdSpecies = new ArrayList<>();
+    }
+
     private Integer getNumberOfPlanets() {
         var planetResponse = given()
                 .when()
@@ -99,6 +116,15 @@ public class PlanetsTests {
                 .get("/people");
 
         var ids = peopleResponse.getBody().jsonPath().getList("id");
+        return Integer.parseInt(ids.get(ids.size() - 1).toString());
+    }
+
+    private Integer getNumberOfSpecies() {
+        var speciesResponse = given()
+                .when()
+                .get("/species");
+
+        var ids = speciesResponse.getBody().jsonPath().getList("id");
         return Integer.parseInt(ids.get(ids.size() - 1).toString());
     }
 
@@ -341,6 +367,57 @@ public class PlanetsTests {
         assertThat(film.vehicles.isEmpty(), equalTo(true));
         assertThat(film.starships.isEmpty(), equalTo(true));
         assertThat(film.species.isEmpty(), equalTo(true));
+    }
+
+    @Test
+    void VerifySpeciesCreation() {
+        var newId = getNumberOfSpecies() + 1;
+
+        var body = new JSONObject()
+                .put("id", newId)
+                .put("name", "Tester_Species_" + newId)
+                .put("classification", "mammel")
+                .put("designation", "sentient")
+                .put("average_height", "170")
+                .put("skin_colors", "green, gray")
+                .put("hair_colors", "black")
+                .put("eye_colors", "black")
+                .put("average_lifespan", "200")
+                .put("homeworld", "")
+                .put("language", "Graylien")
+                .put("people", new ArrayList<>())
+                .put("films", new ArrayList<>())
+                .put("created", Instant.now())
+                .put("edited", Instant.now())
+                .put("url", host + ":" + port + "/species/" + newId);
+
+        var newSpeciesResponse = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .post("/species");
+
+        assertThat(newSpeciesResponse.statusCode(), equalTo(201));
+
+        var speciesResponse = given()
+                .when()
+                .get("/species/" + newId);
+
+        assertThat(speciesResponse, notNullValue());
+        var species = speciesResponse.as(Species.class);
+        createdSpecies.add(species);
+
+        var bodyMap = body.toMap();
+        assertThat(species.name, equalTo(bodyMap.get("name")));
+        assertThat(species.classification, equalTo(bodyMap.get("classification")));
+        assertThat(species.designation, equalTo(bodyMap.get("designation")));
+        assertThat(species.average_height, equalTo(bodyMap.get("average_height")));
+        assertThat(species.skin_colors, equalTo(bodyMap.get("skin_colors")));
+        assertThat(species.hair_colors, equalTo(bodyMap.get("hair_colors")));
+        assertThat(species.eye_colors, equalTo(bodyMap.get("eye_colors")));
+        assertThat(species.average_lifespan, equalTo(bodyMap.get("average_lifespan")));
+        assertThat(species.language, equalTo(bodyMap.get("language")));
+        assertThat(species.people.isEmpty(), equalTo(true));
+        assertThat(species.films.isEmpty(), equalTo(true));
     }
 
     @Test
