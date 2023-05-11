@@ -527,6 +527,49 @@ public class PlanetsTests {
     }
 
     @Test
+    void VerifyPatchedSpecies() {
+        VerifySpeciesCreation();
+
+        var species = createdSpecies.get(0);
+
+        var body = new JSONObject()
+                .put("id", species.id)
+                .put("name", "Tester_Species_Patch_" + species.id)
+                .put("classification", "mammel")
+                .put("designation", "sentient")
+                .put("average_height", "170")
+                .put("skin_colors", "green, gray")
+                .put("hair_colors", "black")
+                .put("eye_colors", "black")
+                .put("average_lifespan", "200")
+                .put("homeworld", "")
+                .put("language", "Graylien")
+                .put("people", new ArrayList<>())
+                .put("films", new ArrayList<>())
+                .put("created", Instant.now())
+                .put("edited", Instant.now())
+                .put("url", host + ":" + port + "/species/" + species.id);
+
+        var request = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .when()
+                .patch("/species/" + species.id);
+
+        assertThat(request.statusCode(), equalTo(200));
+
+        var patchedSpecies = request.as(Species.class);
+        assertThat(patchedSpecies.name, containsString("Patch"));
+
+        var getRequest = given()
+                .when()
+                .get("/species/" + patchedSpecies.id);
+
+        var getSpecies = getRequest.as(Species.class);
+        assertThat(getSpecies.name, containsString("Patch"));
+    }
+
+    @Test
     void VerifyPlanetNotFound() {
         var response = given()
                 .when()
@@ -549,6 +592,15 @@ public class PlanetsTests {
         var response = given()
                 .when()
                 .get("/films/-1");
+
+        assertThat(response.statusCode(), equalTo(404));
+    }
+
+    @Test
+    void VerifySpeciesNotFound() {
+        var response = given()
+                .when()
+                .get("/species/-1");
 
         assertThat(response.statusCode(), equalTo(404));
     }
