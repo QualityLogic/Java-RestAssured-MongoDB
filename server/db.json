@@ -31,8 +31,7 @@
         "localhost:3000/films/6/"
       ],
       "created": "2014-12-09T13:50:49.641000Z",
-      "edited": "2014-12-20T20:58:18.411000Z",
-      "url": "localhost:3000/planets/1/"
+      "edited": "2014-12-20T20:58:18.411000Z"
     },
     {
       "id": 2,
@@ -55,8 +54,7 @@
         "https://swapi.dev/api/films/6/"
       ],
       "created": "2014-12-10T11:35:48.479000Z",
-      "edited": "2014-12-20T20:58:18.420000Z",
-      "url": "https://swapi.dev/api/planets/2/"
+      "edited": "2014-12-20T20:58:18.420000Z"
     },
     {
       "id": 3,
@@ -74,8 +72,7 @@
         "https://swapi.dev/api/films/1/"
       ],
       "created": "2014-12-10T11:37:19.144000Z",
-      "edited": "2014-12-20T20:58:18.421000Z",
-      "url": "https://swapi.dev/api/planets/3/"
+      "edited": "2014-12-20T20:58:18.421000Z"
     },
     {
       "id": 4,
@@ -93,8 +90,7 @@
         "https://swapi.dev/api/films/2/"
       ],
       "created": "2014-12-10T11:39:13.934000Z",
-      "edited": "2014-12-20T20:58:18.423000Z",
-      "url": "https://swapi.dev/api/planets/4/"
+      "edited": "2014-12-20T20:58:18.423000Z"
     },
     {
       "id": 5,
@@ -114,8 +110,7 @@
         "https://swapi.dev/api/films/6/"
       ],
       "created": "2014-12-10T11:42:22.590000Z",
-      "edited": "2014-12-20T20:58:18.425000Z",
-      "url": "https://swapi.dev/api/planets/5/"
+      "edited": "2014-12-20T20:58:18.425000Z"
     },
     {
       "id": 6,
@@ -135,8 +130,7 @@
         "https://swapi.dev/api/films/2/"
       ],
       "created": "2014-12-10T11:43:55.240000Z",
-      "edited": "2014-12-20T20:58:18.427000Z",
-      "url": "https://swapi.dev/api/planets/6/"
+      "edited": "2014-12-20T20:58:18.427000Z"
     },
     {
       "id": 7,
@@ -156,8 +150,7 @@
         "https://swapi.dev/api/films/3/"
       ],
       "created": "2014-12-10T11:50:29.349000Z",
-      "edited": "2014-12-20T20:58:18.429000Z",
-      "url": "https://swapi.dev/api/planets/7/"
+      "edited": "2014-12-20T20:58:18.429000Z"
     },
     {
       "id": 8,
@@ -190,8 +183,7 @@
         "https://swapi.dev/api/films/6/"
       ],
       "created": "2014-12-10T11:52:31.066000Z",
-      "edited": "2014-12-20T20:58:18.430000Z",
-      "url": "https://swapi.dev/api/planets/8/"
+      "edited": "2014-12-20T20:58:18.430000Z"
     },
     {
       "id": 9,
@@ -216,8 +208,7 @@
         "https://swapi.dev/api/films/6/"
       ],
       "created": "2014-12-10T11:54:13.921000Z",
-      "edited": "2014-12-20T20:58:18.432000Z",
-      "url": "https://swapi.dev/api/planets/9/"
+      "edited": "2014-12-20T20:58:18.432000Z"
     },
     {
       "id": 10,
@@ -239,8 +230,7 @@
         "https://swapi.dev/api/films/5/"
       ],
       "created": "2014-12-10T12:45:06.577000Z",
-      "edited": "2014-12-20T20:58:18.434000Z",
-      "url": "https://swapi.dev/api/planets/10/"
+      "edited": "2014-12-20T20:58:18.434000Z"
     }
   ],
   "people": [
@@ -271,8 +261,7 @@
         "https://swapi.dev/api/starships/22/"
       ],
       "created": "2014-12-09T13:50:51.644000Z",
-      "edited": "2014-12-20T21:17:56.891000Z",
-      "url": "https://swapi.dev/api/people/1/"
+      "edited": "2014-12-20T21:17:56.891000Z"
     },
     {
       "id": 2,
@@ -299,8 +288,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-10T15:10:51.357000Z",
-      "edited": "2014-12-20T21:17:50.309000Z",
-      "url": "https://swapi.dev/api/people/2/"
+      "edited": "2014-12-20T21:17:50.309000Z"
     },
     {
       "id": 3,
@@ -327,8 +315,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-10T15:11:50.376000Z",
-      "edited": "2014-12-20T21:17:50.311000Z",
-      "url": "https://swapi.dev/api/people/3/"
+      "edited": "2014-12-20T21:17:50.311000Z"
     },
     {
       "id": 4,
@@ -353,8 +340,7 @@
         "https://swapi.dev/api/starships/13/"
       ],
       "created": "2014-12-10T15:18:20.704000Z",
-      "edited": "2014-12-20T21:17:50.313000Z",
-      "url": "https://swapi.dev/api/people/4/"
+      "edited": "2014-12-20T21:17:50.313000Z"
     },
     {
       "id": 5,
@@ -379,8 +365,7 @@
       ],
       "starships": [],
       "created": "2014-12-10T15:20:09.791000Z",
-      "edited": "2014-12-20T21:17:50.315000Z",
-      "url": "https://swapi.dev/api/people/5/"
+      "edited": "2014-12-20T21:17:50.315000Z"
     },
     {
       "id": 6,
@@ -402,8 +387,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-10T15:52:14.024000Z",
-      "edited": "2014-12-20T21:17:50.317000Z",
-      "url": "https://swapi.dev/api/people/6/"
+      "edited": "2014-12-20T21:17:50.317000Z"
     },
     {
       "id": 7,
@@ -425,8 +409,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-10T15:53:41.121000Z",
-      "edited": "2014-12-20T21:17:50.319000Z",
-      "url": "https://swapi.dev/api/people/7/"
+      "edited": "2014-12-20T21:17:50.319000Z"
     },
     {
       "id": 8,
@@ -448,8 +431,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-10T15:57:50.959000Z",
-      "edited": "2014-12-20T21:17:50.321000Z",
-      "url": "https://swapi.dev/api/people/8/"
+      "edited": "2014-12-20T21:17:50.321000Z"
     },
     {
       "id": 9,
@@ -471,8 +453,7 @@
         "https://swapi.dev/api/starships/12/"
       ],
       "created": "2014-12-10T15:59:50.509000Z",
-      "edited": "2014-12-20T21:17:50.323000Z",
-      "url": "https://swapi.dev/api/people/9/"
+      "edited": "2014-12-20T21:17:50.323000Z"
     },
     {
       "id": 10,
@@ -505,8 +486,7 @@
         "https://swapi.dev/api/starships/74/"
       ],
       "created": "2014-12-10T16:16:29.192000Z",
-      "edited": "2014-12-20T21:17:50.325000Z",
-      "url": "https://swapi.dev/api/people/10/"
+      "edited": "2014-12-20T21:17:50.325000Z"
     },
     {
       "id": 11,
@@ -535,8 +515,7 @@
         "https://swapi.dev/api/starships/65/"
       ],
       "created": "2014-12-10T16:20:44.310000Z",
-      "edited": "2014-12-20T21:17:50.327000Z",
-      "url": "https://swapi.dev/api/people/11/"
+      "edited": "2014-12-20T21:17:50.327000Z"
     },
     {
       "id": 12,
@@ -557,8 +536,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-10T16:26:56.138000Z",
-      "edited": "2014-12-20T21:17:50.330000Z",
-      "url": "https://swapi.dev/api/people/12/"
+      "edited": "2014-12-20T21:17:50.330000Z"
     },
     {
       "id": 13,
@@ -588,8 +566,7 @@
         "https://swapi.dev/api/starships/22/"
       ],
       "created": "2014-12-10T16:42:45.066000Z",
-      "edited": "2014-12-20T21:17:50.332000Z",
-      "url": "https://swapi.dev/api/people/13/"
+      "edited": "2014-12-20T21:17:50.332000Z"
     },
     {
       "id": 14,
@@ -614,8 +591,7 @@
         "https://swapi.dev/api/starships/22/"
       ],
       "created": "2014-12-10T16:49:14.582000Z",
-      "edited": "2014-12-20T21:17:50.334000Z",
-      "url": "https://swapi.dev/api/people/14/"
+      "edited": "2014-12-20T21:17:50.334000Z"
     },
     {
       "id": 15,
@@ -637,8 +613,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-10T17:03:30.334000Z",
-      "edited": "2014-12-20T21:17:50.336000Z",
-      "url": "https://swapi.dev/api/people/15/"
+      "edited": "2014-12-20T21:17:50.336000Z"
     },
     {
       "id": 16,
@@ -662,8 +637,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-10T17:11:31.638000Z",
-      "edited": "2014-12-20T21:17:50.338000Z",
-      "url": "https://swapi.dev/api/people/16/"
+      "edited": "2014-12-20T21:17:50.338000Z"
     },
     {
       "id": 17,
@@ -689,8 +663,7 @@
         "https://swapi.dev/api/starships/12/"
       ],
       "created": "2014-12-12T11:08:06.469000Z",
-      "edited": "2014-12-20T21:17:50.341000Z",
-      "url": "https://swapi.dev/api/people/18/"
+      "edited": "2014-12-20T21:17:50.341000Z"
     },
     {
       "id": 18,
@@ -712,8 +685,7 @@
         "https://swapi.dev/api/starships/12/"
       ],
       "created": "2014-12-12T11:16:56.569000Z",
-      "edited": "2014-12-20T21:17:50.343000Z",
-      "url": "https://swapi.dev/api/people/19/"
+      "edited": "2014-12-20T21:17:50.343000Z"
     },
     {
       "id": 19,
@@ -739,8 +711,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-15T12:26:01.042000Z",
-      "edited": "2014-12-20T21:17:50.345000Z",
-      "url": "https://swapi.dev/api/people/20/"
+      "edited": "2014-12-20T21:17:50.345000Z"
     },
     {
       "id": 20,
@@ -764,8 +735,7 @@
       "vehicles": [],
       "starships": [],
       "created": "2014-12-15T12:48:05.971000Z",
-      "edited": "2014-12-20T21:17:50.347000Z",
-      "url": "https://swapi.dev/api/people/21/"
+      "edited": "2014-12-20T21:17:50.347000Z"
     }
   ],
   "films": [
@@ -826,8 +796,7 @@
         "https://swapi.dev/api/species/5/"
       ],
       "created": "2014-12-10T14:23:31.880000Z",
-      "edited": "2014-12-20T19:49:45.256000Z",
-      "url": "https://swapi.dev/api/films/1/"
+      "edited": "2014-12-20T19:49:45.256000Z"
     },
     {
       "id": 2,
@@ -888,8 +857,7 @@
         "https://swapi.dev/api/species/7/"
       ],
       "created": "2014-12-12T11:26:24.656000Z",
-      "edited": "2014-12-15T13:07:53.386000Z",
-      "url": "https://swapi.dev/api/films/2/"
+      "edited": "2014-12-15T13:07:53.386000Z"
     },
     {
       "id": 3,
@@ -964,8 +932,7 @@
         "https://swapi.dev/api/species/15/"
       ],
       "created": "2014-12-18T10:39:33.255000Z",
-      "edited": "2014-12-20T09:48:37.462000Z",
-      "url": "https://swapi.dev/api/films/3/"
+      "edited": "2014-12-20T09:48:37.462000Z"
     },
     {
       "id": 4,
@@ -1055,8 +1022,7 @@
         "https://swapi.dev/api/species/27/"
       ],
       "created": "2014-12-19T16:52:55.740000Z",
-      "edited": "2014-12-20T10:54:07.216000Z",
-      "url": "https://swapi.dev/api/films/4/"
+      "edited": "2014-12-20T10:54:07.216000Z"
     },
     {
       "id": 5,
@@ -1156,8 +1122,7 @@
         "https://swapi.dev/api/species/35/"
       ],
       "created": "2014-12-20T10:57:57.886000Z",
-      "edited": "2014-12-20T20:18:48.516000Z",
-      "url": "https://swapi.dev/api/films/5/"
+      "edited": "2014-12-20T20:18:48.516000Z"
     },
     {
       "id": 6,
@@ -1270,8 +1235,7 @@
         "https://swapi.dev/api/species/37/"
       ],
       "created": "2014-12-20T18:49:38.403000Z",
-      "edited": "2014-12-20T20:47:52.073000Z",
-      "url": "https://swapi.dev/api/films/6/"
+      "edited": "2014-12-20T20:47:52.073000Z"
     }
   ],
   "species": [
@@ -1302,8 +1266,7 @@
         "https://swapi.dev/api/films/6/"
       ],
       "created": "2014-12-10T13:52:11.567000Z",
-      "edited": "2014-12-20T21:36:42.136000Z",
-      "url": "https://swapi.dev/api/species/1/"
+      "edited": "2014-12-20T21:36:42.136000Z"
     },
     {
       "id": 2,
@@ -1332,8 +1295,7 @@
         "https://swapi.dev/api/films/6/"
       ],
       "created": "2014-12-10T15:16:16.259000Z",
-      "edited": "2014-12-20T21:36:42.139000Z",
-      "url": "https://swapi.dev/api/species/2/"
+      "edited": "2014-12-20T21:36:42.139000Z"
     },
     {
       "id": 3,
@@ -1358,8 +1320,7 @@
         "https://swapi.dev/api/films/6/"
       ],
       "created": "2014-12-10T16:44:31.486000Z",
-      "edited": "2014-12-20T21:36:42.142000Z",
-      "url": "https://swapi.dev/api/species/3/"
+      "edited": "2014-12-20T21:36:42.142000Z"
     },
     {
       "id": 4,
@@ -1380,8 +1341,7 @@
         "https://swapi.dev/api/films/1/"
       ],
       "created": "2014-12-10T17:05:26.471000Z",
-      "edited": "2014-12-20T21:36:42.144000Z",
-      "url": "https://swapi.dev/api/species/4/"
+      "edited": "2014-12-20T21:36:42.144000Z"
     },
     {
       "id": 5,
@@ -1403,8 +1363,7 @@
         "https://swapi.dev/api/films/3/"
       ],
       "created": "2014-12-10T17:12:50.410000Z",
-      "edited": "2014-12-20T21:36:42.146000Z",
-      "url": "https://swapi.dev/api/species/5/"
+      "edited": "2014-12-20T21:36:42.146000Z"
     },
     {
       "id": 6,
@@ -1429,8 +1388,7 @@
         "https://swapi.dev/api/films/6/"
       ],
       "created": "2014-12-15T12:27:22.877000Z",
-      "edited": "2014-12-20T21:36:42.148000Z",
-      "url": "https://swapi.dev/api/species/6/"
+      "edited": "2014-12-20T21:36:42.148000Z"
     },
     {
       "id": 7,
@@ -1451,8 +1409,7 @@
         "https://swapi.dev/api/films/2/"
       ],
       "created": "2014-12-15T13:07:47.704000Z",
-      "edited": "2014-12-20T21:36:42.151000Z",
-      "url": "https://swapi.dev/api/species/7/"
+      "edited": "2014-12-20T21:36:42.151000Z"
     },
     {
       "id": 8,
@@ -1473,8 +1430,7 @@
         "https://swapi.dev/api/films/3/"
       ],
       "created": "2014-12-18T11:09:52.263000Z",
-      "edited": "2014-12-20T21:36:42.153000Z",
-      "url": "https://swapi.dev/api/species/8/"
+      "edited": "2014-12-20T21:36:42.153000Z"
     },
     {
       "id": 9,
@@ -1495,8 +1451,7 @@
         "https://swapi.dev/api/films/3/"
       ],
       "created": "2014-12-18T11:22:00.285000Z",
-      "edited": "2014-12-20T21:36:42.155000Z",
-      "url": "https://swapi.dev/api/species/9/"
+      "edited": "2014-12-20T21:36:42.155000Z"
     },
     {
       "id": 10,
@@ -1517,8 +1472,7 @@
         "https://swapi.dev/api/films/3/"
       ],
       "created": "2014-12-18T11:26:20.103000Z",
-      "edited": "2014-12-20T21:36:42.157000Z",
-      "url": "https://swapi.dev/api/species/10/"
+      "edited": "2014-12-20T21:36:42.157000Z"
     }
   ]
 }
