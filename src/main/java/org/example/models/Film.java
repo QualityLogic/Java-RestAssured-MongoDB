@@ -23,5 +23,4 @@ public class Film {
     public List<String> species;
     public String created;
     public String edited;
-    public String url;
 }
