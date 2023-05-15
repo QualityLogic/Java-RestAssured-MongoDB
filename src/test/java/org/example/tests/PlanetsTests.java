@@ -2,10 +2,7 @@ package org.example.tests;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.example.models.Film;
-import org.example.models.Person;
-import org.example.models.Planet;
-import org.example.models.Species;
+import org.example.models.*;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -213,6 +210,30 @@ public class PlanetsTests {
         assertThat(lukeSkywalker.species.isEmpty(), equalTo(true));
         assertThat(lukeSkywalker.vehicles.isEmpty(), equalTo(false));
         assertThat(lukeSkywalker.starships.isEmpty(), equalTo(false));
+    }
+
+    @Test
+    void VerifyAtAt() {
+        var vehicleResponse = given()
+                .when()
+                .get("/vehicles/7");
+
+        assertThat(vehicleResponse, notNullValue());
+        var atAt = vehicleResponse.as(Vehicle.class);
+
+        assertThat(atAt.name, equalTo("AT-AT"));
+        assertThat(atAt.model, equalTo("All Terrain Armored Transport"));
+        assertThat(atAt.manufacturer, equalTo("Kuat Drive Yards, Imperial Department of Military Research"));
+        assertThat(atAt.cost_in_credits, equalTo("unknown"));
+        assertThat(atAt.length, equalTo("20"));
+        assertThat(atAt.max_atmosphering_speed, equalTo("60"));
+        assertThat(atAt.crew, equalTo("5"));
+        assertThat(atAt.passengers, equalTo("40"));
+        assertThat(atAt.cargo_capacity, equalTo("1000"));
+        assertThat(atAt.consumables, equalTo("unknown"));
+        assertThat(atAt.vehicle_class, equalTo("assault walker"));
+        assertThat(atAt.pilots.isEmpty(), equalTo(true));
+        assertThat(atAt.films.isEmpty(), equalTo(false));
     }
 
     @Test
