@@ -20,7 +20,8 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class PlanetsTests {
-    final static String host = "http://localhost";
+    final static String protocol = "http";
+    final static String host = "localhost";
     final static int port = 3000;
 
     private static List<Planet> createdPlanets = new ArrayList<>();
@@ -33,7 +34,7 @@ public class PlanetsTests {
 
     @BeforeAll
     static void setup() {
-        RestAssured.baseURI = host;
+        RestAssured.baseURI = protocol + "://" + host;
         RestAssured.port = port;
     }
 
@@ -232,8 +233,7 @@ public class PlanetsTests {
                 .put("residents", new ArrayList<String>())
                 .put("films", new ArrayList<String>())
                 .put("created", Instant.now().toString())
-                .put("edited", Instant.now().toString())
-                .put("url", host + ":" + port + "/planets/" + newId);
+                .put("edited", Instant.now().toString());
 
         var postNewPlanetResponse = given()
                 .contentType(ContentType.JSON)
@@ -285,8 +285,7 @@ public class PlanetsTests {
                 .put("vehicles", new ArrayList<String>())
                 .put("starships", new ArrayList<String>())
                 .put("created", Instant.now().toString())
-                .put("edited", Instant.now().toString())
-                .put("url", host + ":" + port + "/people/" + newId);
+                .put("edited", Instant.now().toString());
 
         var newPersonResponse = given()
                 .contentType(ContentType.JSON)
@@ -337,8 +336,7 @@ public class PlanetsTests {
                 .put("vehicles", new ArrayList<>())
                 .put("species", new ArrayList<>())
                 .put("created", Instant.now())
-                .put("edited", Instant.now())
-                .put("url", host + ":" + port + "/films/" + newId);
+                .put("edited", Instant.now());
 
         var newFilmResponse = given()
                 .contentType(ContentType.JSON)
@@ -388,8 +386,7 @@ public class PlanetsTests {
                 .put("people", new ArrayList<>())
                 .put("films", new ArrayList<>())
                 .put("created", Instant.now())
-                .put("edited", Instant.now())
-                .put("url", host + ":" + port + "/species/" + newId);
+                .put("edited", Instant.now());
 
         var newSpeciesResponse = given()
                 .contentType(ContentType.JSON)
@@ -463,8 +460,7 @@ public class PlanetsTests {
                 .put("vehicles", new ArrayList<String>())
                 .put("starships", new ArrayList<String>())
                 .put("created", Instant.now().toString())
-                .put("edited", Instant.now().toString())
-                .put("url", host + "/:" + port + "people/" + person.id);
+                .put("edited", Instant.now().toString());
 
         var request = given()
                 .contentType(ContentType.JSON)
@@ -504,8 +500,7 @@ public class PlanetsTests {
                 .put("residents", new ArrayList<String>())
                 .put("films", new ArrayList<String>())
                 .put("created", Instant.now().toString())
-                .put("edited", Instant.now().toString())
-                .put("url", host + "/:" + port + "planets/" + planet.id);
+                .put("edited", Instant.now().toString());
 
         var request = given()
                 .contentType(ContentType.JSON)
@@ -547,8 +542,7 @@ public class PlanetsTests {
                 .put("people", new ArrayList<>())
                 .put("films", new ArrayList<>())
                 .put("created", Instant.now())
-                .put("edited", Instant.now())
-                .put("url", host + ":" + port + "/species/" + species.id);
+                .put("edited", Instant.now());
 
         var request = given()
                 .contentType(ContentType.JSON)
