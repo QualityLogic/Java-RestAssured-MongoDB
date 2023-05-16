@@ -24,8 +24,8 @@ public class PlanetsTests {
     private static List<Planet> createdPlanets = new ArrayList<>();
     private static List<Person> createdPeople = new ArrayList<>();
     private static List<Film> createdFilms = new ArrayList<>();
-
     private static List<Species> createdSpecies = new ArrayList<>();
+    private static List<Vehicle> createdVehicles = new ArrayList<>();
 
     // Hooks and Utilities
 
@@ -49,6 +49,9 @@ public class PlanetsTests {
 
         if (!createdSpecies.isEmpty())
             deleteNewSpecies();
+
+        if (!createdVehicles.isEmpty())
+            deleteNewVehicles();
     }
 
     private static void deleteNewPlanets() {
@@ -99,6 +102,18 @@ public class PlanetsTests {
         createdSpecies = new ArrayList<>();
     }
 
+    private static void deleteNewVehicles() {
+        for (var vehicle : createdVehicles) {
+            var response = given()
+                    .when()
+                    .delete("vehicles/" + vehicle.id);
+
+            assertThat(response.statusCode(), equalTo(200));
+        }
+
+        createdVehicles = new ArrayList<>();
+    }
+
     private Integer getNumberOfPlanets() {
         var planetResponse = given()
                 .when()
@@ -132,6 +147,15 @@ public class PlanetsTests {
                 .get("/films");
 
         var ids = filmResponse.getBody().jsonPath().getList("id");
+        return Integer.parseInt(ids.get(ids.size() - 1).toString());
+    }
+
+    private Integer getNumberOfVehicles() {
+        var vehicleResponse = given()
+                .when()
+                .get("/vehicles");
+
+        var ids = vehicleResponse.getBody().jsonPath().getList("id");
         return Integer.parseInt(ids.get(ids.size() - 1).toString());
     }
 
