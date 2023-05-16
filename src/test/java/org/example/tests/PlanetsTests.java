@@ -463,6 +463,60 @@ public class PlanetsTests {
     }
 
     @Test
+    void VerifyVehicleCreation() {
+        var newId = getNumberOfVehicles() + 1;
+
+        var body = new JSONObject()
+                .put("id", newId)
+                .put("name", "Vehicle_Tester_" + newId)
+                .put("model", "Testing Assault Vehicle")
+                .put("manufacturer", "Quality Logic")
+                .put("cost_in_credits", "10000")
+                .put("length", "20")
+                .put("max_atmosphering_speed", "60")
+                .put("crew", "5")
+                .put("passengers", "5")
+                .put("cargo_capacity", "1000")
+                .put("consumables", "unknown")
+                .put("vehicle_class", "space fighter")
+                .put("pilots", new ArrayList<String>())
+                .put("films", new ArrayList<String>())
+                .put("created", Instant.now().toString())
+                .put("edited", Instant.now().toString());
+
+        var postNewVehicleResponse = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .when()
+                .post("/vehicles/");
+
+        assertThat(postNewVehicleResponse.statusCode(), equalTo(201));
+
+        var getNewVehicleResponse = given()
+                .when()
+                .get("/vehicles/" + newId);
+
+        assertThat(getNewVehicleResponse, notNullValue());
+        var newVehicle = getNewVehicleResponse.as(Vehicle.class);
+        createdVehicles.add(newVehicle);
+
+        var bodyMap = body.toMap();
+        assertThat(newVehicle.name, equalTo(bodyMap.get("name")));
+        assertThat(newVehicle.model, equalTo(bodyMap.get("model")));
+        assertThat(newVehicle.manufacturer, equalTo(bodyMap.get("manufacturer")));
+        assertThat(newVehicle.cost_in_credits, equalTo(bodyMap.get("cost_in_credits")));
+        assertThat(newVehicle.length, equalTo(bodyMap.get("length")));
+        assertThat(newVehicle.max_atmosphering_speed, equalTo(bodyMap.get("max_atmosphering_speed")));
+        assertThat(newVehicle.crew, equalTo(bodyMap.get("crew")));
+        assertThat(newVehicle.passengers, equalTo(bodyMap.get("passengers")));
+        assertThat(newVehicle.cargo_capacity, equalTo(bodyMap.get("cargo_capacity")));
+        assertThat(newVehicle.consumables, equalTo(bodyMap.get("consumables")));
+        assertThat(newVehicle.vehicle_class, equalTo(bodyMap.get("vehicle_class")));
+        assertThat(newVehicle.pilots.isEmpty(), equalTo(true));
+        assertThat(newVehicle.films.isEmpty(), equalTo(true));
+    }
+
+    @Test
     void VerifyANewHope() {
         var response = given()
                 .when()
