@@ -619,4 +619,13 @@ public class PlanetsTests {
 
         assertThat(response.statusCode(), equalTo(404));
     }
+
+    @Test
+    void VerifyVehicleNotFound() {
+        var response = given()
+                .when()
+                .get("/vehicles/-1");
+
+        assertThat(response.statusCode(), equalTo(404));
+    }
 }
