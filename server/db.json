@@ -12,23 +12,23 @@
       "surface_water": "1",
       "population": "200000",
       "residents": [
-        "localhost:3000/people/1/",
-        "localhost:3000/people/2/",
-        "localhost:3000/people/4/",
-        "localhost:3000/people/6/",
-        "localhost:3000/people/7/",
-        "localhost:3000/people/8/",
-        "localhost:3000/people/9/",
-        "localhost:3000/people/11/",
-        "localhost:3000/people/43/",
-        "localhost:3000/people/62/"
+        "/people/1/",
+        "/people/2/",
+        "/people/4/",
+        "/people/6/",
+        "/people/7/",
+        "/people/8/",
+        "/people/9/",
+        "/people/11/",
+        "/people/43/",
+        "/people/62/"
       ],
       "films": [
-        "localhost:3000/films/1/",
-        "localhost:3000/films/3/",
-        "localhost:3000/films/4/",
-        "localhost:3000/films/5/",
-        "localhost:3000/films/6/"
+        "/films/1/",
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "created": "2014-12-09T13:50:49.641000Z",
       "edited": "2014-12-20T20:58:18.411000Z"
@@ -45,13 +45,13 @@
       "surface_water": "40",
       "population": "2000000000",
       "residents": [
-        "https://swapi.dev/api/people/5/",
-        "https://swapi.dev/api/people/68/",
-        "https://swapi.dev/api/people/81/"
+        "/people/5/",
+        "/people/68/",
+        "/people/81/"
       ],
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/6/"
       ],
       "created": "2014-12-10T11:35:48.479000Z",
       "edited": "2014-12-20T20:58:18.420000Z"
@@ -69,7 +69,7 @@
       "population": "1000",
       "residents": [],
       "films": [
-        "https://swapi.dev/api/films/1/"
+        "/films/1/"
       ],
       "created": "2014-12-10T11:37:19.144000Z",
       "edited": "2014-12-20T20:58:18.421000Z"
@@ -87,7 +87,7 @@
       "population": "unknown",
       "residents": [],
       "films": [
-        "https://swapi.dev/api/films/2/"
+        "/films/2/"
       ],
       "created": "2014-12-10T11:39:13.934000Z",
       "edited": "2014-12-20T20:58:18.423000Z"
@@ -105,9 +105,9 @@
       "population": "unknown",
       "residents": [],
       "films": [
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/6/"
+        "/films/2/",
+        "/films/3/",
+        "/films/6/"
       ],
       "created": "2014-12-10T11:42:22.590000Z",
       "edited": "2014-12-20T20:58:18.425000Z"
@@ -124,10 +124,10 @@
       "surface_water": "0",
       "population": "6000000",
       "residents": [
-        "https://swapi.dev/api/people/26/"
+        "/people/26/"
       ],
       "films": [
-        "https://swapi.dev/api/films/2/"
+        "/films/2/"
       ],
       "created": "2014-12-10T11:43:55.240000Z",
       "edited": "2014-12-20T20:58:18.427000Z"
@@ -144,10 +144,10 @@
       "surface_water": "8",
       "population": "30000000",
       "residents": [
-        "https://swapi.dev/api/people/30/"
+        "/people/30/"
       ],
       "films": [
-        "https://swapi.dev/api/films/3/"
+        "/films/3/"
       ],
       "created": "2014-12-10T11:50:29.349000Z",
       "edited": "2014-12-20T20:58:18.429000Z"
@@ -164,23 +164,23 @@
       "surface_water": "12",
       "population": "4500000000",
       "residents": [
-        "https://swapi.dev/api/people/3/",
-        "https://swapi.dev/api/people/21/",
-        "https://swapi.dev/api/people/35/",
-        "https://swapi.dev/api/people/36/",
-        "https://swapi.dev/api/people/37/",
-        "https://swapi.dev/api/people/38/",
-        "https://swapi.dev/api/people/39/",
-        "https://swapi.dev/api/people/42/",
-        "https://swapi.dev/api/people/60/",
-        "https://swapi.dev/api/people/61/",
-        "https://swapi.dev/api/people/66/"
+        "/people/3/",
+        "/people/21/",
+        "/people/35/",
+        "/people/36/",
+        "/people/37/",
+        "/people/38/",
+        "/people/39/",
+        "/people/42/",
+        "/people/60/",
+        "/people/61/",
+        "/people/66/"
       ],
       "films": [
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "created": "2014-12-10T11:52:31.066000Z",
       "edited": "2014-12-20T20:58:18.430000Z"
@@ -197,15 +197,15 @@
       "surface_water": "unknown",
       "population": "1000000000000",
       "residents": [
-        "https://swapi.dev/api/people/34/",
-        "https://swapi.dev/api/people/55/",
-        "https://swapi.dev/api/people/74/"
+        "/people/34/",
+        "/people/55/",
+        "/people/74/"
       ],
       "films": [
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "created": "2014-12-10T11:54:13.921000Z",
       "edited": "2014-12-20T20:58:18.432000Z"
@@ -222,12 +222,12 @@
       "surface_water": "100",
       "population": "1000000000",
       "residents": [
-        "https://swapi.dev/api/people/22/",
-        "https://swapi.dev/api/people/72/",
-        "https://swapi.dev/api/people/73/"
+        "/people/22/",
+        "/people/72/",
+        "/people/73/"
       ],
       "films": [
-        "https://swapi.dev/api/films/5/"
+        "/films/5/"
       ],
       "created": "2014-12-10T12:45:06.577000Z",
       "edited": "2014-12-20T20:58:18.434000Z"
@@ -244,21 +244,21 @@
       "eye_color": "blue",
       "birth_year": "19BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/1/",
+      "homeworld": "/planets/1/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/6/"
       ],
       "species": [],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/14/",
-        "https://swapi.dev/api/vehicles/30/"
+        "/vehicles/14/",
+        "/vehicles/30/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/12/",
-        "https://swapi.dev/api/starships/22/"
+        "/starships/12/",
+        "/starships/22/"
       ],
       "created": "2014-12-09T13:50:51.644000Z",
       "edited": "2014-12-20T21:17:56.891000Z"
@@ -273,17 +273,17 @@
       "eye_color": "yellow",
       "birth_year": "112BBY",
       "gender": "n/a",
-      "homeworld": "https://swapi.dev/api/planets/1/",
+      "homeworld": "/planets/1/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "species": [
-        "https://swapi.dev/api/species/2/"
+        "/species/2/"
       ],
       "vehicles": [],
       "starships": [],
@@ -300,17 +300,17 @@
       "eye_color": "red",
       "birth_year": "33BBY",
       "gender": "n/a",
-      "homeworld": "https://swapi.dev/api/planets/8/",
+      "homeworld": "/planets/8/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "species": [
-        "https://swapi.dev/api/species/2/"
+        "/species/2/"
       ],
       "vehicles": [],
       "starships": [],
@@ -327,17 +327,17 @@
       "eye_color": "yellow",
       "birth_year": "41.9BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/1/",
+      "homeworld": "/planets/1/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/6/"
       ],
       "species": [],
       "vehicles": [],
       "starships": [
-        "https://swapi.dev/api/starships/13/"
+        "/starships/13/"
       ],
       "created": "2014-12-10T15:18:20.704000Z",
       "edited": "2014-12-20T21:17:50.313000Z"
@@ -352,16 +352,16 @@
       "eye_color": "brown",
       "birth_year": "19BBY",
       "gender": "female",
-      "homeworld": "https://swapi.dev/api/planets/2/",
+      "homeworld": "/planets/2/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/6/"
       ],
       "species": [],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/30/"
+        "/vehicles/30/"
       ],
       "starships": [],
       "created": "2014-12-10T15:20:09.791000Z",
@@ -377,11 +377,11 @@
       "eye_color": "blue",
       "birth_year": "52BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/1/",
+      "homeworld": "/planets/1/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/5/",
+        "/films/6/"
       ],
       "species": [],
       "vehicles": [],
@@ -399,11 +399,11 @@
       "eye_color": "blue",
       "birth_year": "47BBY",
       "gender": "female",
-      "homeworld": "https://swapi.dev/api/planets/1/",
+      "homeworld": "/planets/1/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/5/",
+        "/films/6/"
       ],
       "species": [],
       "vehicles": [],
@@ -421,12 +421,12 @@
       "eye_color": "red",
       "birth_year": "unknown",
       "gender": "n/a",
-      "homeworld": "https://swapi.dev/api/planets/1/",
+      "homeworld": "/planets/1/",
       "films": [
-        "https://swapi.dev/api/films/1/"
+        "/films/1/"
       ],
       "species": [
-        "https://swapi.dev/api/species/2/"
+        "/species/2/"
       ],
       "vehicles": [],
       "starships": [],
@@ -443,14 +443,14 @@
       "eye_color": "brown",
       "birth_year": "24BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/1/",
+      "homeworld": "/planets/1/",
       "films": [
-        "https://swapi.dev/api/films/1/"
+        "/films/1/"
       ],
       "species": [],
       "vehicles": [],
       "starships": [
-        "https://swapi.dev/api/starships/12/"
+        "/starships/12/"
       ],
       "created": "2014-12-10T15:59:50.509000Z",
       "edited": "2014-12-20T21:17:50.323000Z"
@@ -465,25 +465,25 @@
       "eye_color": "blue-gray",
       "birth_year": "57BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/20/",
+      "homeworld": "/planets/20/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "species": [],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/38/"
+        "/vehicles/38/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/48/",
-        "https://swapi.dev/api/starships/59/",
-        "https://swapi.dev/api/starships/64/",
-        "https://swapi.dev/api/starships/65/",
-        "https://swapi.dev/api/starships/74/"
+        "/starships/48/",
+        "/starships/59/",
+        "/starships/64/",
+        "/starships/65/",
+        "/starships/74/"
       ],
       "created": "2014-12-10T16:16:29.192000Z",
       "edited": "2014-12-20T21:17:50.325000Z"
@@ -498,21 +498,21 @@
       "eye_color": "blue",
       "birth_year": "41.9BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/1/",
+      "homeworld": "/planets/1/",
       "films": [
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "species": [],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/44/",
-        "https://swapi.dev/api/vehicles/46/"
+        "/vehicles/44/",
+        "/vehicles/46/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/39/",
-        "https://swapi.dev/api/starships/59/",
-        "https://swapi.dev/api/starships/65/"
+        "/starships/39/",
+        "/starships/59/",
+        "/starships/65/"
       ],
       "created": "2014-12-10T16:20:44.310000Z",
       "edited": "2014-12-20T21:17:50.327000Z"
@@ -527,10 +527,10 @@
       "eye_color": "blue",
       "birth_year": "64BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/21/",
+      "homeworld": "/planets/21/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/6/"
       ],
       "species": [],
       "vehicles": [],
@@ -548,22 +548,22 @@
       "eye_color": "blue",
       "birth_year": "200BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/14/",
+      "homeworld": "/planets/14/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/6/"
       ],
       "species": [
-        "https://swapi.dev/api/species/3/"
+        "/species/3/"
       ],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/19/"
+        "/vehicles/19/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/10/",
-        "https://swapi.dev/api/starships/22/"
+        "/starships/10/",
+        "/starships/22/"
       ],
       "created": "2014-12-10T16:42:45.066000Z",
       "edited": "2014-12-20T21:17:50.332000Z"
@@ -578,17 +578,17 @@
       "eye_color": "brown",
       "birth_year": "29BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/22/",
+      "homeworld": "/planets/22/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/"
       ],
       "species": [],
       "vehicles": [],
       "starships": [
-        "https://swapi.dev/api/starships/10/",
-        "https://swapi.dev/api/starships/22/"
+        "/starships/10/",
+        "/starships/22/"
       ],
       "created": "2014-12-10T16:49:14.582000Z",
       "edited": "2014-12-20T21:17:50.334000Z"
@@ -603,12 +603,12 @@
       "eye_color": "black",
       "birth_year": "44BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/23/",
+      "homeworld": "/planets/23/",
       "films": [
-        "https://swapi.dev/api/films/1/"
+        "/films/1/"
       ],
       "species": [
-        "https://swapi.dev/api/species/4/"
+        "/species/4/"
       ],
       "vehicles": [],
       "starships": [],
@@ -625,14 +625,14 @@
       "eye_color": "orange",
       "birth_year": "600BBY",
       "gender": "hermaphrodite",
-      "homeworld": "https://swapi.dev/api/planets/24/",
+      "homeworld": "/planets/24/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/"
+        "/films/1/",
+        "/films/3/",
+        "/films/4/"
       ],
       "species": [
-        "https://swapi.dev/api/species/5/"
+        "/species/5/"
       ],
       "vehicles": [],
       "starships": [],
@@ -649,18 +649,18 @@
       "eye_color": "hazel",
       "birth_year": "21BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/22/",
+      "homeworld": "/planets/22/",
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/"
       ],
       "species": [],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/14/"
+        "/vehicles/14/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/12/"
+        "/starships/12/"
       ],
       "created": "2014-12-12T11:08:06.469000Z",
       "edited": "2014-12-20T21:17:50.341000Z"
@@ -675,14 +675,14 @@
       "eye_color": "blue",
       "birth_year": "unknown",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/26/",
+      "homeworld": "/planets/26/",
       "films": [
-        "https://swapi.dev/api/films/1/"
+        "/films/1/"
       ],
       "species": [],
       "vehicles": [],
       "starships": [
-        "https://swapi.dev/api/starships/12/"
+        "/starships/12/"
       ],
       "created": "2014-12-12T11:16:56.569000Z",
       "edited": "2014-12-20T21:17:50.343000Z"
@@ -697,16 +697,16 @@
       "eye_color": "brown",
       "birth_year": "896BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/28/",
+      "homeworld": "/planets/28/",
       "films": [
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/2/",
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "species": [
-        "https://swapi.dev/api/species/6/"
+        "/species/6/"
       ],
       "vehicles": [],
       "starships": [],
@@ -723,13 +723,13 @@
       "eye_color": "yellow",
       "birth_year": "82BBY",
       "gender": "male",
-      "homeworld": "https://swapi.dev/api/planets/8/",
+      "homeworld": "/planets/8/",
       "films": [
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/2/",
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "species": [],
       "vehicles": [],
@@ -748,52 +748,52 @@
       "producer": "Gary Kurtz, Rick McCallum",
       "release_date": "1977-05-25",
       "characters": [
-        "https://swapi.dev/api/people/1/",
-        "https://swapi.dev/api/people/2/",
-        "https://swapi.dev/api/people/3/",
-        "https://swapi.dev/api/people/4/",
-        "https://swapi.dev/api/people/5/",
-        "https://swapi.dev/api/people/6/",
-        "https://swapi.dev/api/people/7/",
-        "https://swapi.dev/api/people/8/",
-        "https://swapi.dev/api/people/9/",
-        "https://swapi.dev/api/people/10/",
-        "https://swapi.dev/api/people/12/",
-        "https://swapi.dev/api/people/13/",
-        "https://swapi.dev/api/people/14/",
-        "https://swapi.dev/api/people/15/",
-        "https://swapi.dev/api/people/16/",
-        "https://swapi.dev/api/people/18/",
-        "https://swapi.dev/api/people/19/",
-        "https://swapi.dev/api/people/81/"
+        "/people/1/",
+        "/people/2/",
+        "/people/3/",
+        "/people/4/",
+        "/people/5/",
+        "/people/6/",
+        "/people/7/",
+        "/people/8/",
+        "/people/9/",
+        "/people/10/",
+        "/people/12/",
+        "/people/13/",
+        "/people/14/",
+        "/people/15/",
+        "/people/16/",
+        "/people/18/",
+        "/people/19/",
+        "/people/81/"
       ],
       "planets": [
-        "https://swapi.dev/api/planets/1/",
-        "https://swapi.dev/api/planets/2/",
-        "https://swapi.dev/api/planets/3/"
+        "/planets/1/",
+        "/planets/2/",
+        "/planets/3/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/2/",
-        "https://swapi.dev/api/starships/3/",
-        "https://swapi.dev/api/starships/5/",
-        "https://swapi.dev/api/starships/9/",
-        "https://swapi.dev/api/starships/10/",
-        "https://swapi.dev/api/starships/11/",
-        "https://swapi.dev/api/starships/12/",
-        "https://swapi.dev/api/starships/13/"
+        "/starships/2/",
+        "/starships/3/",
+        "/starships/5/",
+        "/starships/9/",
+        "/starships/10/",
+        "/starships/11/",
+        "/starships/12/",
+        "/starships/13/"
       ],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/4/",
-        "https://swapi.dev/api/vehicles/6/",
-        "https://swapi.dev/api/vehicles/7/",
-        "https://swapi.dev/api/vehicles/8/"
+        "/vehicles/4/",
+        "/vehicles/6/",
+        "/vehicles/7/",
+        "/vehicles/8/"
       ],
       "species": [
-        "https://swapi.dev/api/species/1/",
-        "https://swapi.dev/api/species/2/",
-        "https://swapi.dev/api/species/3/",
-        "https://swapi.dev/api/species/4/",
-        "https://swapi.dev/api/species/5/"
+        "/species/1/",
+        "/species/2/",
+        "/species/3/",
+        "/species/4/",
+        "/species/5/"
       ],
       "created": "2014-12-10T14:23:31.880000Z",
       "edited": "2014-12-20T19:49:45.256000Z"
@@ -807,54 +807,54 @@
       "producer": "Gary Kurtz, Rick McCallum",
       "release_date": "1980-05-17",
       "characters": [
-        "https://swapi.dev/api/people/1/",
-        "https://swapi.dev/api/people/2/",
-        "https://swapi.dev/api/people/3/",
-        "https://swapi.dev/api/people/4/",
-        "https://swapi.dev/api/people/5/",
-        "https://swapi.dev/api/people/10/",
-        "https://swapi.dev/api/people/13/",
-        "https://swapi.dev/api/people/14/",
-        "https://swapi.dev/api/people/18/",
-        "https://swapi.dev/api/people/20/",
-        "https://swapi.dev/api/people/21/",
-        "https://swapi.dev/api/people/22/",
-        "https://swapi.dev/api/people/23/",
-        "https://swapi.dev/api/people/24/",
-        "https://swapi.dev/api/people/25/",
-        "https://swapi.dev/api/people/26/"
+        "/people/1/",
+        "/people/2/",
+        "/people/3/",
+        "/people/4/",
+        "/people/5/",
+        "/people/10/",
+        "/people/13/",
+        "/people/14/",
+        "/people/18/",
+        "/people/20/",
+        "/people/21/",
+        "/people/22/",
+        "/people/23/",
+        "/people/24/",
+        "/people/25/",
+        "/people/26/"
       ],
       "planets": [
-        "https://swapi.dev/api/planets/4/",
-        "https://swapi.dev/api/planets/5/",
-        "https://swapi.dev/api/planets/6/",
-        "https://swapi.dev/api/planets/27/"
+        "/planets/4/",
+        "/planets/5/",
+        "/planets/6/",
+        "/planets/27/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/3/",
-        "https://swapi.dev/api/starships/10/",
-        "https://swapi.dev/api/starships/11/",
-        "https://swapi.dev/api/starships/12/",
-        "https://swapi.dev/api/starships/15/",
-        "https://swapi.dev/api/starships/17/",
-        "https://swapi.dev/api/starships/21/",
-        "https://swapi.dev/api/starships/22/",
-        "https://swapi.dev/api/starships/23/"
+        "/starships/3/",
+        "/starships/10/",
+        "/starships/11/",
+        "/starships/12/",
+        "/starships/15/",
+        "/starships/17/",
+        "/starships/21/",
+        "/starships/22/",
+        "/starships/23/"
       ],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/8/",
-        "https://swapi.dev/api/vehicles/14/",
-        "https://swapi.dev/api/vehicles/16/",
-        "https://swapi.dev/api/vehicles/18/",
-        "https://swapi.dev/api/vehicles/19/",
-        "https://swapi.dev/api/vehicles/20/"
+        "/vehicles/8/",
+        "/vehicles/14/",
+        "/vehicles/16/",
+        "/vehicles/18/",
+        "/vehicles/19/",
+        "/vehicles/20/"
       ],
       "species": [
-        "https://swapi.dev/api/species/1/",
-        "https://swapi.dev/api/species/2/",
-        "https://swapi.dev/api/species/3/",
-        "https://swapi.dev/api/species/6/",
-        "https://swapi.dev/api/species/7/"
+        "/species/1/",
+        "/species/2/",
+        "/species/3/",
+        "/species/6/",
+        "/species/7/"
       ],
       "created": "2014-12-12T11:26:24.656000Z",
       "edited": "2014-12-15T13:07:53.386000Z"
@@ -868,68 +868,68 @@
       "producer": "Howard G. Kazanjian, George Lucas, Rick McCallum",
       "release_date": "1983-05-25",
       "characters": [
-        "https://swapi.dev/api/people/1/",
-        "https://swapi.dev/api/people/2/",
-        "https://swapi.dev/api/people/3/",
-        "https://swapi.dev/api/people/4/",
-        "https://swapi.dev/api/people/5/",
-        "https://swapi.dev/api/people/10/",
-        "https://swapi.dev/api/people/13/",
-        "https://swapi.dev/api/people/14/",
-        "https://swapi.dev/api/people/16/",
-        "https://swapi.dev/api/people/18/",
-        "https://swapi.dev/api/people/20/",
-        "https://swapi.dev/api/people/21/",
-        "https://swapi.dev/api/people/22/",
-        "https://swapi.dev/api/people/25/",
-        "https://swapi.dev/api/people/27/",
-        "https://swapi.dev/api/people/28/",
-        "https://swapi.dev/api/people/29/",
-        "https://swapi.dev/api/people/30/",
-        "https://swapi.dev/api/people/31/",
-        "https://swapi.dev/api/people/45/"
+        "/people/1/",
+        "/people/2/",
+        "/people/3/",
+        "/people/4/",
+        "/people/5/",
+        "/people/10/",
+        "/people/13/",
+        "/people/14/",
+        "/people/16/",
+        "/people/18/",
+        "/people/20/",
+        "/people/21/",
+        "/people/22/",
+        "/people/25/",
+        "/people/27/",
+        "/people/28/",
+        "/people/29/",
+        "/people/30/",
+        "/people/31/",
+        "/people/45/"
       ],
       "planets": [
-        "https://swapi.dev/api/planets/1/",
-        "https://swapi.dev/api/planets/5/",
-        "https://swapi.dev/api/planets/7/",
-        "https://swapi.dev/api/planets/8/",
-        "https://swapi.dev/api/planets/9/"
+        "/planets/1/",
+        "/planets/5/",
+        "/planets/7/",
+        "/planets/8/",
+        "/planets/9/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/2/",
-        "https://swapi.dev/api/starships/3/",
-        "https://swapi.dev/api/starships/10/",
-        "https://swapi.dev/api/starships/11/",
-        "https://swapi.dev/api/starships/12/",
-        "https://swapi.dev/api/starships/15/",
-        "https://swapi.dev/api/starships/17/",
-        "https://swapi.dev/api/starships/22/",
-        "https://swapi.dev/api/starships/23/",
-        "https://swapi.dev/api/starships/27/",
-        "https://swapi.dev/api/starships/28/",
-        "https://swapi.dev/api/starships/29/"
+        "/starships/2/",
+        "/starships/3/",
+        "/starships/10/",
+        "/starships/11/",
+        "/starships/12/",
+        "/starships/15/",
+        "/starships/17/",
+        "/starships/22/",
+        "/starships/23/",
+        "/starships/27/",
+        "/starships/28/",
+        "/starships/29/"
       ],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/8/",
-        "https://swapi.dev/api/vehicles/16/",
-        "https://swapi.dev/api/vehicles/18/",
-        "https://swapi.dev/api/vehicles/19/",
-        "https://swapi.dev/api/vehicles/24/",
-        "https://swapi.dev/api/vehicles/25/",
-        "https://swapi.dev/api/vehicles/26/",
-        "https://swapi.dev/api/vehicles/30/"
+        "/vehicles/8/",
+        "/vehicles/16/",
+        "/vehicles/18/",
+        "/vehicles/19/",
+        "/vehicles/24/",
+        "/vehicles/25/",
+        "/vehicles/26/",
+        "/vehicles/30/"
       ],
       "species": [
-        "https://swapi.dev/api/species/1/",
-        "https://swapi.dev/api/species/2/",
-        "https://swapi.dev/api/species/3/",
-        "https://swapi.dev/api/species/5/",
-        "https://swapi.dev/api/species/6/",
-        "https://swapi.dev/api/species/8/",
-        "https://swapi.dev/api/species/9/",
-        "https://swapi.dev/api/species/10/",
-        "https://swapi.dev/api/species/15/"
+        "/species/1/",
+        "/species/2/",
+        "/species/3/",
+        "/species/5/",
+        "/species/6/",
+        "/species/8/",
+        "/species/9/",
+        "/species/10/",
+        "/species/15/"
       ],
       "created": "2014-12-18T10:39:33.255000Z",
       "edited": "2014-12-20T09:48:37.462000Z"
@@ -943,83 +943,83 @@
       "producer": "Rick McCallum",
       "release_date": "1999-05-19",
       "characters": [
-        "https://swapi.dev/api/people/2/",
-        "https://swapi.dev/api/people/3/",
-        "https://swapi.dev/api/people/10/",
-        "https://swapi.dev/api/people/11/",
-        "https://swapi.dev/api/people/16/",
-        "https://swapi.dev/api/people/20/",
-        "https://swapi.dev/api/people/21/",
-        "https://swapi.dev/api/people/32/",
-        "https://swapi.dev/api/people/33/",
-        "https://swapi.dev/api/people/34/",
-        "https://swapi.dev/api/people/35/",
-        "https://swapi.dev/api/people/36/",
-        "https://swapi.dev/api/people/37/",
-        "https://swapi.dev/api/people/38/",
-        "https://swapi.dev/api/people/39/",
-        "https://swapi.dev/api/people/40/",
-        "https://swapi.dev/api/people/41/",
-        "https://swapi.dev/api/people/42/",
-        "https://swapi.dev/api/people/43/",
-        "https://swapi.dev/api/people/44/",
-        "https://swapi.dev/api/people/46/",
-        "https://swapi.dev/api/people/47/",
-        "https://swapi.dev/api/people/48/",
-        "https://swapi.dev/api/people/49/",
-        "https://swapi.dev/api/people/50/",
-        "https://swapi.dev/api/people/51/",
-        "https://swapi.dev/api/people/52/",
-        "https://swapi.dev/api/people/53/",
-        "https://swapi.dev/api/people/54/",
-        "https://swapi.dev/api/people/55/",
-        "https://swapi.dev/api/people/56/",
-        "https://swapi.dev/api/people/57/",
-        "https://swapi.dev/api/people/58/",
-        "https://swapi.dev/api/people/59/"
+        "/people/2/",
+        "/people/3/",
+        "/people/10/",
+        "/people/11/",
+        "/people/16/",
+        "/people/20/",
+        "/people/21/",
+        "/people/32/",
+        "/people/33/",
+        "/people/34/",
+        "/people/35/",
+        "/people/36/",
+        "/people/37/",
+        "/people/38/",
+        "/people/39/",
+        "/people/40/",
+        "/people/41/",
+        "/people/42/",
+        "/people/43/",
+        "/people/44/",
+        "/people/46/",
+        "/people/47/",
+        "/people/48/",
+        "/people/49/",
+        "/people/50/",
+        "/people/51/",
+        "/people/52/",
+        "/people/53/",
+        "/people/54/",
+        "/people/55/",
+        "/people/56/",
+        "/people/57/",
+        "/people/58/",
+        "/people/59/"
       ],
       "planets": [
-        "https://swapi.dev/api/planets/1/",
-        "https://swapi.dev/api/planets/8/",
-        "https://swapi.dev/api/planets/9/"
+        "/planets/1/",
+        "/planets/8/",
+        "/planets/9/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/31/",
-        "https://swapi.dev/api/starships/32/",
-        "https://swapi.dev/api/starships/39/",
-        "https://swapi.dev/api/starships/40/",
-        "https://swapi.dev/api/starships/41/"
+        "/starships/31/",
+        "/starships/32/",
+        "/starships/39/",
+        "/starships/40/",
+        "/starships/41/"
       ],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/33/",
-        "https://swapi.dev/api/vehicles/34/",
-        "https://swapi.dev/api/vehicles/35/",
-        "https://swapi.dev/api/vehicles/36/",
-        "https://swapi.dev/api/vehicles/37/",
-        "https://swapi.dev/api/vehicles/38/",
-        "https://swapi.dev/api/vehicles/42/"
+        "/vehicles/33/",
+        "/vehicles/34/",
+        "/vehicles/35/",
+        "/vehicles/36/",
+        "/vehicles/37/",
+        "/vehicles/38/",
+        "/vehicles/42/"
       ],
       "species": [
-        "https://swapi.dev/api/species/1/",
-        "https://swapi.dev/api/species/2/",
-        "https://swapi.dev/api/species/6/",
-        "https://swapi.dev/api/species/11/",
-        "https://swapi.dev/api/species/12/",
-        "https://swapi.dev/api/species/13/",
-        "https://swapi.dev/api/species/14/",
-        "https://swapi.dev/api/species/15/",
-        "https://swapi.dev/api/species/16/",
-        "https://swapi.dev/api/species/17/",
-        "https://swapi.dev/api/species/18/",
-        "https://swapi.dev/api/species/19/",
-        "https://swapi.dev/api/species/20/",
-        "https://swapi.dev/api/species/21/",
-        "https://swapi.dev/api/species/22/",
-        "https://swapi.dev/api/species/23/",
-        "https://swapi.dev/api/species/24/",
-        "https://swapi.dev/api/species/25/",
-        "https://swapi.dev/api/species/26/",
-        "https://swapi.dev/api/species/27/"
+        "/species/1/",
+        "/species/2/",
+        "/species/6/",
+        "/species/11/",
+        "/species/12/",
+        "/species/13/",
+        "/species/14/",
+        "/species/15/",
+        "/species/16/",
+        "/species/17/",
+        "/species/18/",
+        "/species/19/",
+        "/species/20/",
+        "/species/21/",
+        "/species/22/",
+        "/species/23/",
+        "/species/24/",
+        "/species/25/",
+        "/species/26/",
+        "/species/27/"
       ],
       "created": "2014-12-19T16:52:55.740000Z",
       "edited": "2014-12-20T10:54:07.216000Z"
@@ -1033,93 +1033,93 @@
       "producer": "Rick McCallum",
       "release_date": "2002-05-16",
       "characters": [
-        "https://swapi.dev/api/people/2/",
-        "https://swapi.dev/api/people/3/",
-        "https://swapi.dev/api/people/6/",
-        "https://swapi.dev/api/people/7/",
-        "https://swapi.dev/api/people/10/",
-        "https://swapi.dev/api/people/11/",
-        "https://swapi.dev/api/people/20/",
-        "https://swapi.dev/api/people/21/",
-        "https://swapi.dev/api/people/22/",
-        "https://swapi.dev/api/people/33/",
-        "https://swapi.dev/api/people/35/",
-        "https://swapi.dev/api/people/36/",
-        "https://swapi.dev/api/people/40/",
-        "https://swapi.dev/api/people/43/",
-        "https://swapi.dev/api/people/46/",
-        "https://swapi.dev/api/people/51/",
-        "https://swapi.dev/api/people/52/",
-        "https://swapi.dev/api/people/53/",
-        "https://swapi.dev/api/people/58/",
-        "https://swapi.dev/api/people/59/",
-        "https://swapi.dev/api/people/60/",
-        "https://swapi.dev/api/people/61/",
-        "https://swapi.dev/api/people/62/",
-        "https://swapi.dev/api/people/63/",
-        "https://swapi.dev/api/people/64/",
-        "https://swapi.dev/api/people/65/",
-        "https://swapi.dev/api/people/66/",
-        "https://swapi.dev/api/people/67/",
-        "https://swapi.dev/api/people/68/",
-        "https://swapi.dev/api/people/69/",
-        "https://swapi.dev/api/people/70/",
-        "https://swapi.dev/api/people/71/",
-        "https://swapi.dev/api/people/72/",
-        "https://swapi.dev/api/people/73/",
-        "https://swapi.dev/api/people/74/",
-        "https://swapi.dev/api/people/75/",
-        "https://swapi.dev/api/people/76/",
-        "https://swapi.dev/api/people/77/",
-        "https://swapi.dev/api/people/78/",
-        "https://swapi.dev/api/people/82/"
+        "/people/2/",
+        "/people/3/",
+        "/people/6/",
+        "/people/7/",
+        "/people/10/",
+        "/people/11/",
+        "/people/20/",
+        "/people/21/",
+        "/people/22/",
+        "/people/33/",
+        "/people/35/",
+        "/people/36/",
+        "/people/40/",
+        "/people/43/",
+        "/people/46/",
+        "/people/51/",
+        "/people/52/",
+        "/people/53/",
+        "/people/58/",
+        "/people/59/",
+        "/people/60/",
+        "/people/61/",
+        "/people/62/",
+        "/people/63/",
+        "/people/64/",
+        "/people/65/",
+        "/people/66/",
+        "/people/67/",
+        "/people/68/",
+        "/people/69/",
+        "/people/70/",
+        "/people/71/",
+        "/people/72/",
+        "/people/73/",
+        "/people/74/",
+        "/people/75/",
+        "/people/76/",
+        "/people/77/",
+        "/people/78/",
+        "/people/82/"
       ],
       "planets": [
-        "https://swapi.dev/api/planets/1/",
-        "https://swapi.dev/api/planets/8/",
-        "https://swapi.dev/api/planets/9/",
-        "https://swapi.dev/api/planets/10/",
-        "https://swapi.dev/api/planets/11/"
+        "/planets/1/",
+        "/planets/8/",
+        "/planets/9/",
+        "/planets/10/",
+        "/planets/11/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/21/",
-        "https://swapi.dev/api/starships/32/",
-        "https://swapi.dev/api/starships/39/",
-        "https://swapi.dev/api/starships/43/",
-        "https://swapi.dev/api/starships/47/",
-        "https://swapi.dev/api/starships/48/",
-        "https://swapi.dev/api/starships/49/",
-        "https://swapi.dev/api/starships/52/",
-        "https://swapi.dev/api/starships/58/"
+        "/starships/21/",
+        "/starships/32/",
+        "/starships/39/",
+        "/starships/43/",
+        "/starships/47/",
+        "/starships/48/",
+        "/starships/49/",
+        "/starships/52/",
+        "/starships/58/"
       ],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/4/",
-        "https://swapi.dev/api/vehicles/44/",
-        "https://swapi.dev/api/vehicles/45/",
-        "https://swapi.dev/api/vehicles/46/",
-        "https://swapi.dev/api/vehicles/50/",
-        "https://swapi.dev/api/vehicles/51/",
-        "https://swapi.dev/api/vehicles/53/",
-        "https://swapi.dev/api/vehicles/54/",
-        "https://swapi.dev/api/vehicles/55/",
-        "https://swapi.dev/api/vehicles/56/",
-        "https://swapi.dev/api/vehicles/57/"
+        "/vehicles/4/",
+        "/vehicles/44/",
+        "/vehicles/45/",
+        "/vehicles/46/",
+        "/vehicles/50/",
+        "/vehicles/51/",
+        "/vehicles/53/",
+        "/vehicles/54/",
+        "/vehicles/55/",
+        "/vehicles/56/",
+        "/vehicles/57/"
       ],
       "species": [
-        "https://swapi.dev/api/species/1/",
-        "https://swapi.dev/api/species/2/",
-        "https://swapi.dev/api/species/6/",
-        "https://swapi.dev/api/species/12/",
-        "https://swapi.dev/api/species/13/",
-        "https://swapi.dev/api/species/15/",
-        "https://swapi.dev/api/species/28/",
-        "https://swapi.dev/api/species/29/",
-        "https://swapi.dev/api/species/30/",
-        "https://swapi.dev/api/species/31/",
-        "https://swapi.dev/api/species/32/",
-        "https://swapi.dev/api/species/33/",
-        "https://swapi.dev/api/species/34/",
-        "https://swapi.dev/api/species/35/"
+        "/species/1/",
+        "/species/2/",
+        "/species/6/",
+        "/species/12/",
+        "/species/13/",
+        "/species/15/",
+        "/species/28/",
+        "/species/29/",
+        "/species/30/",
+        "/species/31/",
+        "/species/32/",
+        "/species/33/",
+        "/species/34/",
+        "/species/35/"
       ],
       "created": "2014-12-20T10:57:57.886000Z",
       "edited": "2014-12-20T20:18:48.516000Z"
@@ -1133,106 +1133,106 @@
       "producer": "Rick McCallum",
       "release_date": "2005-05-19",
       "characters": [
-        "https://swapi.dev/api/people/1/",
-        "https://swapi.dev/api/people/2/",
-        "https://swapi.dev/api/people/3/",
-        "https://swapi.dev/api/people/4/",
-        "https://swapi.dev/api/people/5/",
-        "https://swapi.dev/api/people/6/",
-        "https://swapi.dev/api/people/7/",
-        "https://swapi.dev/api/people/10/",
-        "https://swapi.dev/api/people/11/",
-        "https://swapi.dev/api/people/12/",
-        "https://swapi.dev/api/people/13/",
-        "https://swapi.dev/api/people/20/",
-        "https://swapi.dev/api/people/21/",
-        "https://swapi.dev/api/people/33/",
-        "https://swapi.dev/api/people/35/",
-        "https://swapi.dev/api/people/46/",
-        "https://swapi.dev/api/people/51/",
-        "https://swapi.dev/api/people/52/",
-        "https://swapi.dev/api/people/53/",
-        "https://swapi.dev/api/people/54/",
-        "https://swapi.dev/api/people/55/",
-        "https://swapi.dev/api/people/56/",
-        "https://swapi.dev/api/people/58/",
-        "https://swapi.dev/api/people/63/",
-        "https://swapi.dev/api/people/64/",
-        "https://swapi.dev/api/people/67/",
-        "https://swapi.dev/api/people/68/",
-        "https://swapi.dev/api/people/75/",
-        "https://swapi.dev/api/people/78/",
-        "https://swapi.dev/api/people/79/",
-        "https://swapi.dev/api/people/80/",
-        "https://swapi.dev/api/people/81/",
-        "https://swapi.dev/api/people/82/",
-        "https://swapi.dev/api/people/83/"
+        "/people/1/",
+        "/people/2/",
+        "/people/3/",
+        "/people/4/",
+        "/people/5/",
+        "/people/6/",
+        "/people/7/",
+        "/people/10/",
+        "/people/11/",
+        "/people/12/",
+        "/people/13/",
+        "/people/20/",
+        "/people/21/",
+        "/people/33/",
+        "/people/35/",
+        "/people/46/",
+        "/people/51/",
+        "/people/52/",
+        "/people/53/",
+        "/people/54/",
+        "/people/55/",
+        "/people/56/",
+        "/people/58/",
+        "/people/63/",
+        "/people/64/",
+        "/people/67/",
+        "/people/68/",
+        "/people/75/",
+        "/people/78/",
+        "/people/79/",
+        "/people/80/",
+        "/people/81/",
+        "/people/82/",
+        "/people/83/"
       ],
       "planets": [
-        "https://swapi.dev/api/planets/1/",
-        "https://swapi.dev/api/planets/2/",
-        "https://swapi.dev/api/planets/5/",
-        "https://swapi.dev/api/planets/8/",
-        "https://swapi.dev/api/planets/9/",
-        "https://swapi.dev/api/planets/12/",
-        "https://swapi.dev/api/planets/13/",
-        "https://swapi.dev/api/planets/14/",
-        "https://swapi.dev/api/planets/15/",
-        "https://swapi.dev/api/planets/16/",
-        "https://swapi.dev/api/planets/17/",
-        "https://swapi.dev/api/planets/18/",
-        "https://swapi.dev/api/planets/19/"
+        "/planets/1/",
+        "/planets/2/",
+        "/planets/5/",
+        "/planets/8/",
+        "/planets/9/",
+        "/planets/12/",
+        "/planets/13/",
+        "/planets/14/",
+        "/planets/15/",
+        "/planets/16/",
+        "/planets/17/",
+        "/planets/18/",
+        "/planets/19/"
       ],
       "starships": [
-        "https://swapi.dev/api/starships/2/",
-        "https://swapi.dev/api/starships/32/",
-        "https://swapi.dev/api/starships/48/",
-        "https://swapi.dev/api/starships/59/",
-        "https://swapi.dev/api/starships/61/",
-        "https://swapi.dev/api/starships/63/",
-        "https://swapi.dev/api/starships/64/",
-        "https://swapi.dev/api/starships/65/",
-        "https://swapi.dev/api/starships/66/",
-        "https://swapi.dev/api/starships/68/",
-        "https://swapi.dev/api/starships/74/",
-        "https://swapi.dev/api/starships/75/"
+        "/starships/2/",
+        "/starships/32/",
+        "/starships/48/",
+        "/starships/59/",
+        "/starships/61/",
+        "/starships/63/",
+        "/starships/64/",
+        "/starships/65/",
+        "/starships/66/",
+        "/starships/68/",
+        "/starships/74/",
+        "/starships/75/"
       ],
       "vehicles": [
-        "https://swapi.dev/api/vehicles/33/",
-        "https://swapi.dev/api/vehicles/50/",
-        "https://swapi.dev/api/vehicles/53/",
-        "https://swapi.dev/api/vehicles/56/",
-        "https://swapi.dev/api/vehicles/60/",
-        "https://swapi.dev/api/vehicles/62/",
-        "https://swapi.dev/api/vehicles/67/",
-        "https://swapi.dev/api/vehicles/69/",
-        "https://swapi.dev/api/vehicles/70/",
-        "https://swapi.dev/api/vehicles/71/",
-        "https://swapi.dev/api/vehicles/72/",
-        "https://swapi.dev/api/vehicles/73/",
-        "https://swapi.dev/api/vehicles/76/"
+        "/vehicles/33/",
+        "/vehicles/50/",
+        "/vehicles/53/",
+        "/vehicles/56/",
+        "/vehicles/60/",
+        "/vehicles/62/",
+        "/vehicles/67/",
+        "/vehicles/69/",
+        "/vehicles/70/",
+        "/vehicles/71/",
+        "/vehicles/72/",
+        "/vehicles/73/",
+        "/vehicles/76/"
       ],
       "species": [
-        "https://swapi.dev/api/species/1/",
-        "https://swapi.dev/api/species/2/",
-        "https://swapi.dev/api/species/3/",
-        "https://swapi.dev/api/species/6/",
-        "https://swapi.dev/api/species/15/",
-        "https://swapi.dev/api/species/19/",
-        "https://swapi.dev/api/species/20/",
-        "https://swapi.dev/api/species/23/",
-        "https://swapi.dev/api/species/24/",
-        "https://swapi.dev/api/species/25/",
-        "https://swapi.dev/api/species/26/",
-        "https://swapi.dev/api/species/27/",
-        "https://swapi.dev/api/species/28/",
-        "https://swapi.dev/api/species/29/",
-        "https://swapi.dev/api/species/30/",
-        "https://swapi.dev/api/species/33/",
-        "https://swapi.dev/api/species/34/",
-        "https://swapi.dev/api/species/35/",
-        "https://swapi.dev/api/species/36/",
-        "https://swapi.dev/api/species/37/"
+        "/species/1/",
+        "/species/2/",
+        "/species/3/",
+        "/species/6/",
+        "/species/15/",
+        "/species/19/",
+        "/species/20/",
+        "/species/23/",
+        "/species/24/",
+        "/species/25/",
+        "/species/26/",
+        "/species/27/",
+        "/species/28/",
+        "/species/29/",
+        "/species/30/",
+        "/species/33/",
+        "/species/34/",
+        "/species/35/",
+        "/species/36/",
+        "/species/37/"
       ],
       "created": "2014-12-20T18:49:38.403000Z",
       "edited": "2014-12-20T20:47:52.073000Z"
@@ -1249,21 +1249,21 @@
       "hair_colors": "blonde, brown, black, red",
       "eye_colors": "brown, blue, green, hazel, grey, amber",
       "average_lifespan": "120",
-      "homeworld": "https://swapi.dev/api/planets/9/",
+      "homeworld": "/planets/9/",
       "language": "Galactic Basic",
       "people": [
-        "https://swapi.dev/api/people/66/",
-        "https://swapi.dev/api/people/67/",
-        "https://swapi.dev/api/people/68/",
-        "https://swapi.dev/api/people/74/"
+        "/people/66/",
+        "/people/67/",
+        "/people/68/",
+        "/people/74/"
       ],
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "created": "2014-12-10T13:52:11.567000Z",
       "edited": "2014-12-20T21:36:42.136000Z"
@@ -1281,18 +1281,18 @@
       "homeworld": null,
       "language": "n/a",
       "people": [
-        "https://swapi.dev/api/people/2/",
-        "https://swapi.dev/api/people/3/",
-        "https://swapi.dev/api/people/8/",
-        "https://swapi.dev/api/people/23/"
+        "/people/2/",
+        "/people/3/",
+        "/people/8/",
+        "/people/23/"
       ],
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "created": "2014-12-10T15:16:16.259000Z",
       "edited": "2014-12-20T21:36:42.139000Z"
@@ -1307,17 +1307,17 @@
       "hair_colors": "black, brown",
       "eye_colors": "blue, green, yellow, brown, golden, red",
       "average_lifespan": "400",
-      "homeworld": "https://swapi.dev/api/planets/14/",
+      "homeworld": "/planets/14/",
       "language": "Shyriiwook",
       "people": [
-        "https://swapi.dev/api/people/13/",
-        "https://swapi.dev/api/people/80/"
+        "/people/13/",
+        "/people/80/"
       ],
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/6/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/",
+        "/films/6/"
       ],
       "created": "2014-12-10T16:44:31.486000Z",
       "edited": "2014-12-20T21:36:42.142000Z"
@@ -1332,13 +1332,13 @@
       "hair_colors": "n/a",
       "eye_colors": "black",
       "average_lifespan": "unknown",
-      "homeworld": "https://swapi.dev/api/planets/23/",
+      "homeworld": "/planets/23/",
       "language": "Galatic Basic",
       "people": [
-        "https://swapi.dev/api/people/15/"
+        "/people/15/"
       ],
       "films": [
-        "https://swapi.dev/api/films/1/"
+        "/films/1/"
       ],
       "created": "2014-12-10T17:05:26.471000Z",
       "edited": "2014-12-20T21:36:42.144000Z"
@@ -1353,14 +1353,14 @@
       "hair_colors": "n/a",
       "eye_colors": "yellow, red",
       "average_lifespan": "1000",
-      "homeworld": "https://swapi.dev/api/planets/24/",
+      "homeworld": "/planets/24/",
       "language": "Huttese",
       "people": [
-        "https://swapi.dev/api/people/16/"
+        "/people/16/"
       ],
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/3/"
+        "/films/1/",
+        "/films/3/"
       ],
       "created": "2014-12-10T17:12:50.410000Z",
       "edited": "2014-12-20T21:36:42.146000Z"
@@ -1375,17 +1375,17 @@
       "hair_colors": "brown, white",
       "eye_colors": "brown, green, yellow",
       "average_lifespan": "900",
-      "homeworld": "https://swapi.dev/api/planets/28/",
+      "homeworld": "/planets/28/",
       "language": "Galactic basic",
       "people": [
-        "https://swapi.dev/api/people/20/"
+        "/people/20/"
       ],
       "films": [
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
+        "/films/2/",
+        "/films/3/",
+        "/films/4/",
+        "/films/5/",
+        "/films/6/"
       ],
       "created": "2014-12-15T12:27:22.877000Z",
       "edited": "2014-12-20T21:36:42.148000Z"
@@ -1400,13 +1400,13 @@
       "hair_colors": "none",
       "eye_colors": "yellow, orange",
       "average_lifespan": "unknown",
-      "homeworld": "https://swapi.dev/api/planets/29/",
+      "homeworld": "/planets/29/",
       "language": "Dosh",
       "people": [
-        "https://swapi.dev/api/people/24/"
+        "/people/24/"
       ],
       "films": [
-        "https://swapi.dev/api/films/2/"
+        "/films/2/"
       ],
       "created": "2014-12-15T13:07:47.704000Z",
       "edited": "2014-12-20T21:36:42.151000Z"
@@ -1421,13 +1421,13 @@
       "hair_colors": "none",
       "eye_colors": "yellow",
       "average_lifespan": "unknown",
-      "homeworld": "https://swapi.dev/api/planets/31/",
+      "homeworld": "/planets/31/",
       "language": "Mon Calamarian",
       "people": [
-        "https://swapi.dev/api/people/27/"
+        "/people/27/"
       ],
       "films": [
-        "https://swapi.dev/api/films/3/"
+        "/films/3/"
       ],
       "created": "2014-12-18T11:09:52.263000Z",
       "edited": "2014-12-20T21:36:42.153000Z"
@@ -1442,13 +1442,13 @@
       "hair_colors": "white, brown, black",
       "eye_colors": "orange, brown",
       "average_lifespan": "unknown",
-      "homeworld": "https://swapi.dev/api/planets/7/",
+      "homeworld": "/planets/7/",
       "language": "Ewokese",
       "people": [
-        "https://swapi.dev/api/people/30/"
+        "/people/30/"
       ],
       "films": [
-        "https://swapi.dev/api/films/3/"
+        "/films/3/"
       ],
       "created": "2014-12-18T11:22:00.285000Z",
       "edited": "2014-12-20T21:36:42.155000Z"
@@ -1463,13 +1463,13 @@
       "hair_colors": "none",
       "eye_colors": "black",
       "average_lifespan": "unknown",
-      "homeworld": "https://swapi.dev/api/planets/33/",
+      "homeworld": "/planets/33/",
       "language": "Sullutese",
       "people": [
-        "https://swapi.dev/api/people/31/"
+        "/people/31/"
       ],
       "films": [
-        "https://swapi.dev/api/films/3/"
+        "/films/3/"
       ],
       "created": "2014-12-18T11:26:20.103000Z",
       "edited": "2014-12-20T21:36:42.157000Z"
@@ -1491,8 +1491,8 @@
       "vehicle_class": "wheeled",
       "pilots": [],
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/5/"
+        "/films/1/",
+        "/films/5/"
       ],
       "created": "2014-12-10T15:36:25.724000Z",
       "edited": "2014-12-20T21:30:21.661000Z"
@@ -1512,7 +1512,7 @@
       "vehicle_class": "repulsorcraft",
       "pilots": [],
       "films": [
-        "https://swapi.dev/api/films/1/"
+        "/films/1/"
       ],
       "created": "2014-12-10T16:01:52.434000Z",
       "edited": "2014-12-20T21:30:21.665000Z"
@@ -1532,7 +1532,7 @@
       "vehicle_class": "repulsorcraft",
       "pilots": [],
       "films": [
-        "https://swapi.dev/api/films/1/"
+        "/films/1/"
       ],
       "created": "2014-12-10T16:13:52.586000Z",
       "edited": "2014-12-20T21:30:21.668000Z"
@@ -1552,9 +1552,9 @@
       "vehicle_class": "starfighter",
       "pilots": [],
       "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/"
+        "/films/1/",
+        "/films/2/",
+        "/films/3/"
       ],
       "created": "2014-12-10T16:33:52.860000Z",
       "edited": "2014-12-20T21:30:21.670000Z"
@@ -1573,11 +1573,11 @@
       "consumables": "none",
       "vehicle_class": "airspeeder",
       "pilots": [
-        "https://swapi.dev/api/people/1/",
-        "https://swapi.dev/api/people/18/"
+        "/people/1/",
+        "/people/18/"
       ],
       "films": [
-        "https://swapi.dev/api/films/2/"
+        "/films/2/"
       ],
       "created": "2014-12-15T12:22:12Z",
       "edited": "2014-12-20T21:30:21.672000Z"
@@ -1597,8 +1597,8 @@
       "vehicle_class": "space/planetary bomber",
       "pilots": [],
       "films": [
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/"
+        "/films/2/",
+        "/films/3/"
       ],
       "created": "2014-12-15T12:33:15.838000Z",
       "edited": "2014-12-20T21:30:21.675000Z"
@@ -1618,8 +1618,8 @@
       "vehicle_class": "assault walker",
       "pilots": [],
       "films": [
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/"
+        "/films/2/",
+        "/films/3/"
       ],
       "created": "2014-12-15T12:38:25.937000Z",
       "edited": "2014-12-20T21:30:21.677000Z"

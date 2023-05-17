@@ -706,4 +706,55 @@ public class PlanetsTests {
 
         assertThat(response.statusCode(), equalTo(404));
     }
+
+    @Test
+    void VerifyCrossLinkedEndpointData() {
+        var luke = given()
+                .when()
+                .get("/people/1")
+                .as(Person.class);
+
+        var tatooine = given()
+                .when()
+                .get("/planets/1")
+                .as(Planet.class);
+
+        var resident = given()
+                .when()
+                .get(tatooine.residents.get(0))
+                .as(Person.class);
+
+        assertThat(luke.id, equalTo(resident.id));
+        assertThat(luke.name, equalTo(resident.name));
+        assertThat(luke.height, equalTo(resident.height));
+        assertThat(luke.mass, equalTo(resident.mass));
+        assertThat(luke.hair_color, equalTo(resident.hair_color));
+        assertThat(luke.skin_color, equalTo(resident.skin_color));
+        assertThat(luke.eye_color, equalTo(resident.eye_color));
+        assertThat(luke.birth_year, equalTo(resident.birth_year));
+        assertThat(luke.gender, equalTo(resident.gender));
+        assertThat(luke.homeworld, equalTo(resident.homeworld));
+        assertThat(luke.films, equalTo(resident.films));
+        assertThat(luke.species, equalTo(resident.species));
+        assertThat(luke.vehicles, equalTo(resident.vehicles));
+        assertThat(luke.starships, equalTo(resident.starships));
+
+        var homeworld = given()
+                .when()
+                .get(resident.homeworld)
+                .as(Planet.class);
+
+        assertThat(homeworld.id, equalTo(tatooine.id));
+        assertThat(homeworld.name, equalTo(tatooine.name));
+        assertThat(homeworld.rotation_period, equalTo(tatooine.rotation_period));
+        assertThat(homeworld.orbital_period, equalTo(tatooine.orbital_period));
+        assertThat(homeworld.diameter, equalTo(tatooine.diameter));
+        assertThat(homeworld.climate, equalTo(tatooine.climate));
+        assertThat(homeworld.gravity, equalTo(tatooine.gravity));
+        assertThat(homeworld.terrain, equalTo(tatooine.terrain));
+        assertThat(homeworld.surface_water, equalTo(tatooine.surface_water));
+        assertThat(homeworld.population, equalTo(tatooine.population));
+        assertThat(homeworld.residents, equalTo(tatooine.residents));
+        assertThat(homeworld.films, equalTo(tatooine.films));
+    }
 }
