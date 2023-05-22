@@ -663,6 +663,49 @@ public class PlanetsTests {
     }
 
     @Test
+    void VerifyPatchedVehicle() {
+        VerifyVehicleCreation();
+
+        var vehicle = createdVehicles.get(0);
+
+        var body = new JSONObject()
+                .put("id", vehicle.id)
+                .put("name", "Vehicle_Tester_Patch" + vehicle.id)
+                .put("model", "Testing Assault Vehicle")
+                .put("manufacturer", "Quality Logic")
+                .put("cost_in_credits", "10000")
+                .put("length", "20")
+                .put("max_atmosphering_speed", "60")
+                .put("crew", "5")
+                .put("passengers", "5")
+                .put("cargo_capacity", "1000")
+                .put("consumables", "unknown")
+                .put("vehicle_class", "space fighter")
+                .put("pilots", new ArrayList<String>())
+                .put("films", new ArrayList<String>())
+                .put("created", Instant.now().toString())
+                .put("edited", Instant.now().toString());
+
+        var request = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .when()
+                .patch("/vehicles/" + vehicle.id);
+
+        assertThat(request.statusCode(), equalTo(200));
+
+        var patchedVehicle = request.as(Vehicle.class);
+        assertThat(patchedVehicle.name, containsString("Patch"));
+
+        var getRequest = given()
+                .when()
+                .get("/vehicles/" + patchedVehicle.id);
+
+        var getVehicle = getRequest.as(Vehicle.class);
+        assertThat(getVehicle.name, containsString("Patch"));
+    }
+
+    @Test
     void VerifyPlanetNotFound() {
         var response = given()
                 .when()
