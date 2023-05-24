@@ -2,6 +2,7 @@ package org.example.tests;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.example.models.*;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterEach;
@@ -159,7 +160,74 @@ public class PlanetsTests {
         return Integer.parseInt(ids.get(ids.size() - 1).toString());
     }
 
+    private Boolean isGETAllResponseSuccessful(Response response) {
+        try {
+            assertThat(response.statusCode(), equalTo(200));
+            var body = response.getBody().jsonPath().getList("id");
+            assertThat(body.isEmpty(), equalTo(false));
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+            return  false;
+        }
+
+        return true;
+    }
+
     // Tests
+
+    @Test
+    void GetPeople() {
+        var response = given()
+                .when()
+                .get("/people/");
+
+        assertThat(isGETAllResponseSuccessful(response), equalTo(true));
+    }
+
+    @Test
+    void GetFilms() {
+        var response = given()
+                .when()
+                .get("/films/");
+
+        assertThat(isGETAllResponseSuccessful(response), equalTo(true));
+    }
+
+    @Test
+    void GetPlanets() {
+        var response = given()
+                .when()
+                .get("/planets/");
+
+        assertThat(isGETAllResponseSuccessful(response), equalTo(true));
+    }
+
+    @Test
+    void GetSpecies() {
+        var response = given()
+                .when()
+                .get("/species/");
+
+        assertThat(isGETAllResponseSuccessful(response), equalTo(true));
+    }
+
+    @Test
+    void GetVehicles() {
+        var response = given()
+                .when()
+                .get("/vehicles/");
+
+        assertThat(isGETAllResponseSuccessful(response), equalTo(true));
+    }
+
+    @Test
+    void GetStarships() {
+        var response = given()
+                .when()
+                .get("/starships/");
+
+        assertThat(isGETAllResponseSuccessful(response), equalTo(true));
+    }
 
     @Test
     void VerifyHuman() {
