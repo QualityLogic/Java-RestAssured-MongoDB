@@ -800,6 +800,15 @@ public class PlanetsTests {
     }
 
     @Test
+    void VerifyStarshipNotFound() {
+        var response = given()
+                .when()
+                .get("/starships/-1");
+
+        assertThat(response.statusCode(), equalTo(404));
+    }
+
+    @Test
     void VerifyCrossLinkedEndpointData() {
         var luke = given()
                 .when()
