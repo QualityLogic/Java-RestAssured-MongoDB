@@ -17,7 +17,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class PlanetsTests {
+public class APITests {
     final static String protocol = "http";
     final static String host = "localhost";
     final static int port = 3000;
