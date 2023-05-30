@@ -17,7 +17,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class PlanetsTests {
+public class APITests {
     final static String protocol = "http";
     final static String host = "localhost";
     final static int port = 3000;
@@ -116,47 +116,28 @@ public class PlanetsTests {
     }
 
     private Integer getNumberOfPlanets() {
-        var planetResponse = given()
-                .when()
-                .get("/planets");
-
-        var ids = planetResponse.getBody().jsonPath().getList("id");
-        return Integer.parseInt(ids.get(ids.size() - 1).toString());
+        return getNumberOfItemsFromResponse(given().when().get("/planets"));
     }
 
     private Integer getNumberOfPeople() {
-        var peopleResponse = given()
-                .when()
-                .get("/people");
-
-        var ids = peopleResponse.getBody().jsonPath().getList("id");
-        return Integer.parseInt(ids.get(ids.size() - 1).toString());
+        return getNumberOfItemsFromResponse(given().when().get("/people"));
     }
 
     private Integer getNumberOfSpecies() {
-        var speciesResponse = given()
-                .when()
-                .get("/species");
-
-        var ids = speciesResponse.getBody().jsonPath().getList("id");
-        return Integer.parseInt(ids.get(ids.size() - 1).toString());
+        return getNumberOfItemsFromResponse(given().when().get("/species"));
     }
 
     private Integer getNumberOfFilms() {
-        var filmResponse = given()
-                .when()
-                .get("/films");
+        return getNumberOfItemsFromResponse(given().when().get("/films"));
 
-        var ids = filmResponse.getBody().jsonPath().getList("id");
-        return Integer.parseInt(ids.get(ids.size() - 1).toString());
     }
 
     private Integer getNumberOfVehicles() {
-        var vehicleResponse = given()
-                .when()
-                .get("/vehicles");
+        return getNumberOfItemsFromResponse(given().when().get("/vehicles"));
+    }
 
-        var ids = vehicleResponse.getBody().jsonPath().getList("id");
+    private Integer getNumberOfItemsFromResponse(Response response) {
+        var ids = response.getBody().jsonPath().getList("id");
         return Integer.parseInt(ids.get(ids.size() - 1).toString());
     }
 
@@ -814,6 +795,15 @@ public class PlanetsTests {
         var response = given()
                 .when()
                 .get("/vehicles/-1");
+
+        assertThat(response.statusCode(), equalTo(404));
+    }
+
+    @Test
+    void VerifyStarshipNotFound() {
+        var response = given()
+                .when()
+                .get("/starships/-1");
 
         assertThat(response.statusCode(), equalTo(404));
     }
