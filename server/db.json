@@ -1627,6 +1627,7 @@
   ],
   "starships": [
     {
+      "id": 1,
       "name": "CR90 corvette",
       "model": "CR90 corvette",
       "manufacturer": "Corellian Engineering Corporation",
@@ -1650,6 +1651,7 @@
       "edited": "2014-12-20T21:23:49.867000Z"
     },
     {
+      "id": 2,
       "name": "Star Destroyer",
       "model": "Imperial I-class Star Destroyer",
       "manufacturer": "Kuat Drive Yards",
@@ -1673,6 +1675,7 @@
       "edited": "2014-12-20T21:23:49.870000Z"
     },
     {
+      "id": 3,
       "name": "Sentinel-class landing craft",
       "model": "Sentinel-class landing craft",
       "manufacturer": "Sienar Fleet Systems, Cyngus Spaceworks",
@@ -1694,6 +1697,7 @@
       "edited": "2014-12-20T21:23:49.873000Z"
     },
     {
+      "id": 4,
       "name": "Death Star",
       "model": "DS-1 Orbital Battle Station",
       "manufacturer": "Imperial Department of Military Research, Sienar Fleet Systems",
@@ -1715,6 +1719,7 @@
       "edited": "2014-12-20T21:26:24.783000Z"
     },
     {
+      "id": 5,
       "name": "Millennium Falcon",
       "model": "YT-1300 light freighter",
       "manufacturer": "Corellian Engineering Corporation",
@@ -1743,6 +1748,7 @@
       "edited": "2014-12-20T21:23:49.880000Z"
     },
     {
+      "id": 6,
       "name": "Y-wing",
       "model": "BTL Y-wing",
       "manufacturer": "Koensayr Manufacturing",
@@ -1766,6 +1772,7 @@
       "edited": "2014-12-20T21:23:49.883000Z"
     },
     {
+      "id": 7,
       "name": "X-wing",
       "model": "T-65 X-wing",
       "manufacturer": "Incom Corporation",
@@ -1794,6 +1801,7 @@
       "edited": "2014-12-20T21:23:49.886000Z"
     },
     {
+      "id": 8,
       "name": "TIE Advanced x1",
       "model": "Twin Ion Engine Advanced x1",
       "manufacturer": "Sienar Fleet Systems",
@@ -1817,6 +1825,7 @@
       "edited": "2014-12-20T21:23:49.889000Z"
     },
     {
+      "id": 9,
       "name": "Executor",
       "model": "Executor-class star dreadnought",
       "manufacturer": "Kuat Drive Yards, Fondor Shipyards",
@@ -1839,6 +1848,7 @@
       "edited": "2014-12-20T21:23:49.893000Z"
     },
     {
+      "id": 10,
       "name": "Rebel transport",
       "model": "GR-75 medium transport",
       "manufacturer": "Gallofree Yards, Inc.",
