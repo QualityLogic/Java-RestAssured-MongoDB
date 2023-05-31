@@ -310,6 +310,52 @@ public class APITests {
     }
 
     @Test
+    void VerifyANewHope() {
+        var response = given()
+                .when()
+                .get("/films/1");
+
+        var aNewHope = response.as(Film.class);
+
+        var openingCrawl = "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy....";
+
+        assertThat(aNewHope.title, equalTo("A New Hope"));
+        assertThat(aNewHope.episode_id, equalTo("4"));
+        assertThat(aNewHope.opening_crawl, equalTo(openingCrawl));
+        assertThat(aNewHope.director, equalTo("George Lucas"));
+        assertThat(aNewHope.producer, equalTo("Gary Kurtz, Rick McCallum"));
+        assertThat(aNewHope.characters.isEmpty(), equalTo(false));
+        assertThat(aNewHope.planets.isEmpty(), equalTo(false));
+        assertThat(aNewHope.starships.isEmpty(), equalTo(false));
+        assertThat(aNewHope.vehicles.isEmpty(), equalTo(false));
+        assertThat(aNewHope.species.isEmpty(), equalTo(false));
+    }
+
+    @Test
+    void VerifyStarDestroyer() {
+        var response = given()
+                .when()
+                .get("/starships/2");
+
+        var starDestroyer = response.as(Starship.class);
+
+        assertThat(starDestroyer.name, equalTo("Star Destroyer"));
+        assertThat(starDestroyer.model, equalTo("Imperial I-class Star Destroyer"));
+        assertThat(starDestroyer.manufacturer, equalTo("Kuat Drive Yards"));
+        assertThat(starDestroyer.cost_in_credits, equalTo("150000000"));
+        assertThat(starDestroyer.length, equalTo("1,600"));
+        assertThat(starDestroyer.max_atmosphering_speed, equalTo("975"));
+        assertThat(starDestroyer.crew, equalTo("47,060"));
+        assertThat(starDestroyer.passengers, equalTo("n/a"));
+        assertThat(starDestroyer.cargo_capacity, equalTo("36000000"));
+        assertThat(starDestroyer.consumables, equalTo("2 years"));
+        assertThat(starDestroyer.hyperdrive_rating, equalTo("2.0"));
+        assertThat(starDestroyer.MGLT, equalTo("60"));
+        assertThat(starDestroyer.starship_class, equalTo("Star Destroyer"));
+        assertThat(starDestroyer.pilots.isEmpty(), equalTo(true));
+    }
+
+    @Test
     void VerifyPlanetCreation() {
         var newId = getNumberOfPlanets() + 1;
 
@@ -563,28 +609,6 @@ public class APITests {
         assertThat(newVehicle.vehicle_class, equalTo(bodyMap.get("vehicle_class")));
         assertThat(newVehicle.pilots.isEmpty(), equalTo(true));
         assertThat(newVehicle.films.isEmpty(), equalTo(true));
-    }
-
-    @Test
-    void VerifyANewHope() {
-        var response = given()
-                .when()
-                .get("/films/1");
-
-        var aNewHope = response.as(Film.class);
-
-        var openingCrawl = "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy....";
-
-        assertThat(aNewHope.title, equalTo("A New Hope"));
-        assertThat(aNewHope.episode_id, equalTo("4"));
-        assertThat(aNewHope.opening_crawl, equalTo(openingCrawl));
-        assertThat(aNewHope.director, equalTo("George Lucas"));
-        assertThat(aNewHope.producer, equalTo("Gary Kurtz, Rick McCallum"));
-        assertThat(aNewHope.characters.isEmpty(), equalTo(false));
-        assertThat(aNewHope.planets.isEmpty(), equalTo(false));
-        assertThat(aNewHope.starships.isEmpty(), equalTo(false));
-        assertThat(aNewHope.vehicles.isEmpty(), equalTo(false));
-        assertThat(aNewHope.species.isEmpty(), equalTo(false));
     }
 
     @Test
