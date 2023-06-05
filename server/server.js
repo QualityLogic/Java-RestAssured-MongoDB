@@ -10,13 +10,16 @@ const jwt = require('jsonwebtoken')
 
 const PORT = process.env.PORT
 
+let user
+
 server.use(middlewares)
 server.use(express.json())
 
 // Auth
 server.get("/auth", async (req, res) => {
     try {
-        const user = await User.create({name: "qli"})
+        user = await User.findOne({name: "qli"})
+        console.log
 
         const token = jwt.sign(
             { user_id: user._id },
@@ -27,11 +30,26 @@ server.get("/auth", async (req, res) => {
         )
 
         user.token = token
+        console.log(user.token)
 
         res.status(201).json(user)
     } catch(e) {
         console.log(e)
     }
+})
+
+server.use(async (req, res, next) => {
+    const { token } = req.headers
+
+    console.log("USER: " + user)
+    console.log("USER: " + user.token)
+    console.log("HEADER: " + token)
+    if (user.token != token) {
+        res.status(401).json({message: "Authentication failed"})
+        return
+    }
+
+    next()
 })
 
 server.use(router)
