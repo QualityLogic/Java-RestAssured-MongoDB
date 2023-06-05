@@ -7,7 +7,6 @@ import java.util.List;
 
 @Type("person")
 public class Person {
-
     @Id
     public String id;
     public String name;
