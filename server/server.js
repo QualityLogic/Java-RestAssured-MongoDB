@@ -30,7 +30,6 @@ server.get("/auth", async (req, res) => {
         )
 
         user.token = token
-        console.log(user.token)
 
         res.status(201).json(user)
     } catch(e) {
@@ -41,9 +40,6 @@ server.get("/auth", async (req, res) => {
 server.use(async (req, res, next) => {
     const { token } = req.headers
 
-    console.log("USER: " + user)
-    console.log("USER: " + user.token)
-    console.log("HEADER: " + token)
     if (user.token != token) {
         res.status(401).json({message: "Authentication failed"})
         return

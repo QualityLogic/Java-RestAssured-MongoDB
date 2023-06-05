@@ -231,6 +231,22 @@
       ],
       "created": "2014-12-10T12:45:06.577000Z",
       "edited": "2014-12-20T20:58:18.434000Z"
+    },
+    {
+      "films": [],
+      "edited": "2023-06-05T20:21:44.251705Z",
+      "created": "2023-06-05T20:21:44.250234Z",
+      "climate": "arid",
+      "rotation_period": "10",
+      "population": "300000",
+      "orbital_period": "83",
+      "surface_water": "1",
+      "diameter": "10000",
+      "gravity": "1 standard",
+      "name": "Planet_Tester_11",
+      "residents": [],
+      "id": 11,
+      "terrain": "desert"
     }
   ],
   "people": [
