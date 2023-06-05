@@ -7,7 +7,6 @@ import java.util.List;
 
 @Type("planet")
 public class Planet {
-
     @Id
     public String id;
     public String name;

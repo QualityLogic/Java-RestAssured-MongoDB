@@ -7,6 +7,7 @@ import org.example.models.*;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
@@ -27,6 +28,9 @@ public class APITests {
     private static List<Film> createdFilms = new ArrayList<>();
     private static List<Species> createdSpecies = new ArrayList<>();
     private static List<Vehicle> createdVehicles = new ArrayList<>();
+    private static List<Starship> createdStarships = new ArrayList<>();
+
+    private static String databaseState;
 
     // Hooks and Utilities
 
@@ -34,6 +38,15 @@ public class APITests {
     static void setup() {
         RestAssured.baseURI = protocol + "://" + host;
         RestAssured.port = port;
+    }
+
+    @BeforeEach
+    void getDbState() {
+        var response = given()
+                .when()
+                .get("/db");
+
+        databaseState = response.body().jsonPath().prettify();
     }
 
     @AfterEach
@@ -53,18 +66,16 @@ public class APITests {
 
         if (!createdVehicles.isEmpty())
             deleteNewVehicles();
-    }
 
-    private static void deleteNewPlanets() {
-        for (var planet : createdPlanets) {
-            var response = given()
-                    .when()
-                    .delete("planets/" + planet.id);
+        if (!createdStarships.isEmpty())
+            deleteNewStarships();
 
-            assertThat(response.statusCode(), equalTo(200));
-        }
+        // Ensure the state of the db was not changed
+        var response = given()
+                .when()
+                .get("/db");
 
-        createdPlanets = new ArrayList<>();
+        assertThat(response.body().jsonPath().prettify(), equalTo(databaseState));
     }
 
     private static void deleteNewPeople() {
@@ -77,6 +88,18 @@ public class APITests {
         }
 
         createdPeople = new ArrayList<>();
+    }
+
+    private static void deleteNewPlanets() {
+        for (var planet : createdPlanets) {
+            var response = given()
+                    .when()
+                    .delete("planets/" + planet.id);
+
+            assertThat(response.statusCode(), equalTo(200));
+        }
+
+        createdPlanets = new ArrayList<>();
     }
 
     private static void deleteNewFilms() {
@@ -115,6 +138,18 @@ public class APITests {
         createdVehicles = new ArrayList<>();
     }
 
+   private static void deleteNewStarships() {
+        for (var starship : createdStarships) {
+            var response = given()
+                    .when()
+                    .delete("starships/" + starship.id);
+
+            assertThat(response.statusCode(), equalTo(200));
+        }
+
+        createdStarships = new ArrayList<>();
+   }
+
     private Integer getNumberOfPlanets() {
         return getNumberOfItemsFromResponse(given().when().get("/planets"));
     }
@@ -134,6 +169,10 @@ public class APITests {
 
     private Integer getNumberOfVehicles() {
         return getNumberOfItemsFromResponse(given().when().get("/vehicles"));
+    }
+
+    private Integer getNumberOfStarships() {
+        return getNumberOfItemsFromResponse(given().when().get("/starships"));
     }
 
     private Integer getNumberOfItemsFromResponse(Response response) {
@@ -612,6 +651,64 @@ public class APITests {
     }
 
     @Test
+    void VerifyStarshipCreation() {
+        var newId = getNumberOfStarships() + 1;
+
+        var body = new JSONObject()
+                .put("id", newId)
+                .put("name", "Starship_Tester_" + newId)
+                .put("model", "Testing Starship")
+                .put("manufacturer", "Quality Logic")
+                .put("cost_in_credits", "10000")
+                .put("length", "20")
+                .put("max_atmosphering_speed", "60")
+                .put("crew", "150")
+                .put("passengers", "n/a")
+                .put("cargo_capacity", "10000")
+                .put("consumables", "unknown")
+                .put("hyperdrive_rating", "2.0")
+                .put("MGLT", "40")
+                .put("starship_class", "space ship")
+                .put("pilots", new ArrayList<String>())
+                .put("films", new ArrayList<String>())
+                .put("created", Instant.now().toString())
+                .put("edited", Instant.now().toString());
+
+        var postNewStarshipResponse = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .when()
+                .post("/starships/");
+
+        assertThat(postNewStarshipResponse.statusCode(), equalTo(201));
+
+        var getNewStarshipResponse = given()
+                .when()
+                .get("/starships/" + newId);
+
+        assertThat(getNewStarshipResponse, notNullValue());
+        var newStarship = getNewStarshipResponse.as(Starship.class);
+        createdStarships.add(newStarship);
+
+        var bodyMap = body.toMap();
+        assertThat(newStarship.name, equalTo(bodyMap.get("name")));
+        assertThat(newStarship.model, equalTo(bodyMap.get("model")));
+        assertThat(newStarship.manufacturer, equalTo(bodyMap.get("manufacturer")));
+        assertThat(newStarship.cost_in_credits, equalTo(bodyMap.get("cost_in_credits")));
+        assertThat(newStarship.length, equalTo(bodyMap.get("length")));
+        assertThat(newStarship.max_atmosphering_speed, equalTo(bodyMap.get("max_atmosphering_speed")));
+        assertThat(newStarship.crew, equalTo(bodyMap.get("crew")));
+        assertThat(newStarship.passengers, equalTo(bodyMap.get("passengers")));
+        assertThat(newStarship.cargo_capacity, equalTo(bodyMap.get("cargo_capacity")));
+        assertThat(newStarship.consumables, equalTo(bodyMap.get("consumables")));
+        assertThat(newStarship.hyperdrive_rating, equalTo(bodyMap.get("hyperdrive_rating")));
+        assertThat(newStarship.MGLT, equalTo(bodyMap.get("MGLT")));
+        assertThat(newStarship.starship_class, equalTo(bodyMap.get("starship_class")));
+        assertThat(newStarship.pilots.isEmpty(), equalTo(true));
+        assertThat(newStarship.films.isEmpty(), equalTo(true));
+    }
+
+    @Test
     void VerifyPatchedPerson() {
         VerifyPersonCreation();
 
@@ -776,6 +873,51 @@ public class APITests {
 
         var getVehicle = getRequest.as(Vehicle.class);
         assertThat(getVehicle.name, containsString("Patch"));
+    }
+
+    @Test
+    void VerifyPatchedStarship() {
+        VerifyStarshipCreation();
+
+        var starship = createdStarships.get(0);
+
+        var body = new JSONObject()
+                .put("id", starship.id)
+                .put("name", "Starship_Tester_Patch" + starship.id)
+                .put("model", "Testing Starship")
+                .put("manufacturer", "Quality Logic")
+                .put("cost_in_credits", "10000")
+                .put("length", "20")
+                .put("max_atmosphering_speed", "60")
+                .put("crew", "150")
+                .put("passengers", "n/a")
+                .put("cargo_capacity", "10000")
+                .put("consumables", "unknown")
+                .put("hyperdrive_rating", "2.0")
+                .put("MGLT", "40")
+                .put("starship_class", "space ship")
+                .put("pilots", new ArrayList<String>())
+                .put("films", new ArrayList<String>())
+                .put("created", Instant.now().toString())
+                .put("edited", Instant.now().toString());
+
+        var request = given()
+                .contentType(ContentType.JSON)
+                .body(body.toString())
+                .when()
+                .patch("/starships/" + starship.id);
+
+        assertThat(request.statusCode(), equalTo(200));
+
+        var patchedStarship = request.as(Starship.class);
+        assertThat(patchedStarship.name, containsString("Patch"));
+
+        var getRequest = given()
+                .when()
+                .get("/starships/" + patchedStarship.id);
+
+        var getStarship = getRequest.as(Starship.class);
+        assertThat(getStarship.name, containsString("Patch"));
     }
 
     @Test
