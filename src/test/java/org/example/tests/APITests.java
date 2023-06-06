@@ -32,17 +32,26 @@ public class APITests {
 
     private static String databaseState;
 
+    private static String token;
+
     // Hooks and Utilities
 
     @BeforeAll
     static void setup() {
         RestAssured.baseURI = protocol + "://" + host;
         RestAssured.port = port;
+
+        var response = given()
+                .when()
+                .get("/auth");
+
+        token = response.body().jsonPath().get("token");
     }
 
     @BeforeEach
     void getDbState() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/db");
 
@@ -72,6 +81,7 @@ public class APITests {
 
         // Ensure the state of the db was not changed
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/db");
 
@@ -81,6 +91,7 @@ public class APITests {
     private static void deleteNewPeople() {
         for (var person : createdPeople) {
             var response = given()
+                    .header("token", token)
                     .when()
                     .delete("people/" + person.id);
 
@@ -93,6 +104,7 @@ public class APITests {
     private static void deleteNewPlanets() {
         for (var planet : createdPlanets) {
             var response = given()
+                    .header("token", token)
                     .when()
                     .delete("planets/" + planet.id);
 
@@ -105,6 +117,7 @@ public class APITests {
     private static void deleteNewFilms() {
         for (var film : createdFilms) {
             var response = given()
+                    .header("token", token)
                     .when()
                     .delete("films/" + film.id);
 
@@ -117,6 +130,7 @@ public class APITests {
     private static void deleteNewSpecies() {
         for (var species : createdSpecies) {
             var response = given()
+                    .header("token", token)
                     .when()
                     .delete("species/" + species.id);
 
@@ -129,6 +143,7 @@ public class APITests {
     private static void deleteNewVehicles() {
         for (var vehicle : createdVehicles) {
             var response = given()
+                    .header("token", token)
                     .when()
                     .delete("vehicles/" + vehicle.id);
 
@@ -141,6 +156,7 @@ public class APITests {
    private static void deleteNewStarships() {
         for (var starship : createdStarships) {
             var response = given()
+                    .header("token", token)
                     .when()
                     .delete("starships/" + starship.id);
 
@@ -151,28 +167,28 @@ public class APITests {
    }
 
     private Integer getNumberOfPlanets() {
-        return getNumberOfItemsFromResponse(given().when().get("/planets"));
+        return getNumberOfItemsFromResponse(given().header("token", token).when().get("/planets"));
     }
 
     private Integer getNumberOfPeople() {
-        return getNumberOfItemsFromResponse(given().when().get("/people"));
+        return getNumberOfItemsFromResponse(given().header("token", token).when().get("/people"));
     }
 
     private Integer getNumberOfSpecies() {
-        return getNumberOfItemsFromResponse(given().when().get("/species"));
+        return getNumberOfItemsFromResponse(given().header("token", token).when().get("/species"));
     }
 
     private Integer getNumberOfFilms() {
-        return getNumberOfItemsFromResponse(given().when().get("/films"));
+        return getNumberOfItemsFromResponse(given().header("token", token).when().get("/films"));
 
     }
 
     private Integer getNumberOfVehicles() {
-        return getNumberOfItemsFromResponse(given().when().get("/vehicles"));
+        return getNumberOfItemsFromResponse(given().header("token", token).when().get("/vehicles"));
     }
 
     private Integer getNumberOfStarships() {
-        return getNumberOfItemsFromResponse(given().when().get("/starships"));
+        return getNumberOfItemsFromResponse(given().header("token", token).when().get("/starships"));
     }
 
     private Integer getNumberOfItemsFromResponse(Response response) {
@@ -198,6 +214,7 @@ public class APITests {
     @Test
     void GetPeople() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/people/");
 
@@ -207,6 +224,7 @@ public class APITests {
     @Test
     void GetFilms() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/films/");
 
@@ -216,6 +234,7 @@ public class APITests {
     @Test
     void GetPlanets() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/planets/");
 
@@ -225,6 +244,7 @@ public class APITests {
     @Test
     void GetSpecies() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/species/");
 
@@ -234,6 +254,7 @@ public class APITests {
     @Test
     void GetVehicles() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/vehicles/");
 
@@ -243,6 +264,7 @@ public class APITests {
     @Test
     void GetStarships() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/starships/");
 
@@ -252,6 +274,7 @@ public class APITests {
     @Test
     void VerifyHuman() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/species/1");
 
@@ -273,6 +296,7 @@ public class APITests {
     @Test
     void VerifyTatooine() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/planets/1");
 
@@ -295,12 +319,14 @@ public class APITests {
     @Test
     void VerifyLukeSkywalker() {
         var planetResponse = given()
+                .header("token", token)
                 .when()
                 .get("/planets/1");
         assertThat(planetResponse, notNullValue());
         var tatooine = planetResponse.as(Planet.class);
 
         var personResponse = given()
+                .header("token", token)
                 .when()
                 .get("/people/1");
 
@@ -327,6 +353,7 @@ public class APITests {
     @Test
     void VerifyAtAt() {
         var vehicleResponse = given()
+                .header("token", token)
                 .when()
                 .get("/vehicles/7");
 
@@ -351,6 +378,7 @@ public class APITests {
     @Test
     void VerifyANewHope() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/films/1");
 
@@ -373,6 +401,7 @@ public class APITests {
     @Test
     void VerifyStarDestroyer() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/starships/2");
 
@@ -415,6 +444,7 @@ public class APITests {
                 .put("edited", Instant.now().toString());
 
         var postNewPlanetResponse = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .when()
@@ -423,6 +453,7 @@ public class APITests {
         assertThat(postNewPlanetResponse.statusCode(), equalTo(201));
 
         var getNewPlanetResponse = given()
+                .header("token", token)
                 .when()
                 .get("/planets/" + newId);
 
@@ -467,6 +498,7 @@ public class APITests {
                 .put("edited", Instant.now().toString());
 
         var newPersonResponse = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .when()
@@ -475,6 +507,7 @@ public class APITests {
         assertThat(newPersonResponse.statusCode(), equalTo(201));
 
         var personResponse = given()
+                .header("token", token)
                 .when()
                 .get("/people/" + newId);
 
@@ -518,6 +551,7 @@ public class APITests {
                 .put("edited", Instant.now());
 
         var newFilmResponse = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .post("/films");
@@ -525,6 +559,7 @@ public class APITests {
         assertThat(newFilmResponse.statusCode(), equalTo(201));
 
         var filmResponse = given()
+                .header("token", token)
                 .when()
                 .get("/films/" + newId);
 
@@ -568,6 +603,7 @@ public class APITests {
                 .put("edited", Instant.now());
 
         var newSpeciesResponse = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .post("/species");
@@ -575,6 +611,7 @@ public class APITests {
         assertThat(newSpeciesResponse.statusCode(), equalTo(201));
 
         var speciesResponse = given()
+                .header("token", token)
                 .when()
                 .get("/species/" + newId);
 
@@ -619,6 +656,7 @@ public class APITests {
                 .put("edited", Instant.now().toString());
 
         var postNewVehicleResponse = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .when()
@@ -627,6 +665,7 @@ public class APITests {
         assertThat(postNewVehicleResponse.statusCode(), equalTo(201));
 
         var getNewVehicleResponse = given()
+                .header("token", token)
                 .when()
                 .get("/vehicles/" + newId);
 
@@ -675,6 +714,7 @@ public class APITests {
                 .put("edited", Instant.now().toString());
 
         var postNewStarshipResponse = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .when()
@@ -683,6 +723,7 @@ public class APITests {
         assertThat(postNewStarshipResponse.statusCode(), equalTo(201));
 
         var getNewStarshipResponse = given()
+                .header("token", token)
                 .when()
                 .get("/starships/" + newId);
 
@@ -732,6 +773,7 @@ public class APITests {
                 .put("edited", Instant.now().toString());
 
         var request = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .when()
@@ -743,6 +785,7 @@ public class APITests {
         assertThat(patchedPerson.name, containsString("Patch"));
 
         var getRequest = given()
+                .header("token", token)
                 .when()
                 .get("/people/" + patchedPerson.id);
 
@@ -772,6 +815,7 @@ public class APITests {
                 .put("edited", Instant.now().toString());
 
         var request = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .when()
@@ -783,6 +827,7 @@ public class APITests {
         assertThat(patchedPlanet.name, containsString("Patch"));
 
         var getRequest = given()
+                .header("token", token)
                 .when()
                 .get("/planets/" + patchedPlanet.id);
 
@@ -814,6 +859,7 @@ public class APITests {
                 .put("edited", Instant.now());
 
         var request = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .when()
@@ -825,6 +871,7 @@ public class APITests {
         assertThat(patchedSpecies.name, containsString("Patch"));
 
         var getRequest = given()
+                .header("token", token)
                 .when()
                 .get("/species/" + patchedSpecies.id);
 
@@ -857,6 +904,7 @@ public class APITests {
                 .put("edited", Instant.now().toString());
 
         var request = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .when()
@@ -868,6 +916,7 @@ public class APITests {
         assertThat(patchedVehicle.name, containsString("Patch"));
 
         var getRequest = given()
+                .header("token", token)
                 .when()
                 .get("/vehicles/" + patchedVehicle.id);
 
@@ -902,6 +951,7 @@ public class APITests {
                 .put("edited", Instant.now().toString());
 
         var request = given()
+                .header("token", token)
                 .contentType(ContentType.JSON)
                 .body(body.toString())
                 .when()
@@ -913,6 +963,7 @@ public class APITests {
         assertThat(patchedStarship.name, containsString("Patch"));
 
         var getRequest = given()
+                .header("token", token)
                 .when()
                 .get("/starships/" + patchedStarship.id);
 
@@ -923,6 +974,7 @@ public class APITests {
     @Test
     void VerifyPlanetNotFound() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/planets/-1");
 
@@ -932,6 +984,7 @@ public class APITests {
     @Test
     void VerifyPersonNotFound() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/people/-1");
 
@@ -941,6 +994,7 @@ public class APITests {
     @Test
     void VerifyFilmNotFound() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/films/-1");
 
@@ -950,6 +1004,7 @@ public class APITests {
     @Test
     void VerifySpeciesNotFound() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/species/-1");
 
@@ -959,6 +1014,7 @@ public class APITests {
     @Test
     void VerifyVehicleNotFound() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/vehicles/-1");
 
@@ -968,6 +1024,7 @@ public class APITests {
     @Test
     void VerifyStarshipNotFound() {
         var response = given()
+                .header("token", token)
                 .when()
                 .get("/starships/-1");
 
@@ -977,16 +1034,19 @@ public class APITests {
     @Test
     void VerifyCrossLinkedEndpointData() {
         var luke = given()
+                .header("token", token)
                 .when()
                 .get("/people/1")
                 .as(Person.class);
 
         var tatooine = given()
+                .header("token", token)
                 .when()
                 .get("/planets/1")
                 .as(Planet.class);
 
         var resident = given()
+                .header("token", token)
                 .when()
                 .get(tatooine.residents.get(0))
                 .as(Person.class);
@@ -1007,6 +1067,7 @@ public class APITests {
         assertThat(luke.starships, equalTo(resident.starships));
 
         var homeworld = given()
+                .header("token", token)
                 .when()
                 .get(resident.homeworld)
                 .as(Planet.class);
@@ -1023,5 +1084,14 @@ public class APITests {
         assertThat(homeworld.population, equalTo(tatooine.population));
         assertThat(homeworld.residents, equalTo(tatooine.residents));
         assertThat(homeworld.films, equalTo(tatooine.films));
+    }
+
+    @Test
+    void VerifyNoAuthentication() {
+        var response = given()
+                .when()
+                .get("/people");
+
+        assertThat(response.statusCode(), equalTo(401));
     }
 }
